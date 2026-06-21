@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>О Жаннете</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .wrap{display:flex;height:100%;align-items:center;gap:46px}
+  .photo{flex:none;width:360px;height:512px;border:5px solid var(--gold);border-radius:12px;overflow:hidden;
+    background:#1f1a14;box-shadow:0 20px 44px rgba(31,51,80,.34);position:relative}
+  .photo img{width:100%;height:100%;object-fit:cover;object-position:72% 28%;display:block}
+  .photo .cap{position:absolute;left:0;right:0;bottom:0;padding:16px 18px 12px;
+    background:linear-gradient(to top,rgba(20,16,12,.82),transparent);
+    font-family:'Marck Script',cursive;color:#f0e0b8;font-size:30px;line-height:1}
+  .text{flex:1}
+  .text .kicker{font-size:26px}
+  .text h1{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--ink);font-size:54px;line-height:1;margin:2px 0 0}
+  .text .intro{font-size:18px;color:var(--body);line-height:1.6;margin-top:16px}
+  .text .intro b{color:var(--ink)}
+  .list{margin-top:16px;display:flex;flex-direction:column;gap:9px}
+  .list .li{display:flex;align-items:flex-start;gap:11px;font-size:16.5px;color:var(--body);line-height:1.4}
+  .list .li .d{width:8px;height:8px;flex:none;margin-top:7px;transform:rotate(45deg);border:1.5px solid var(--gold)}
+  .list .li i{color:var(--water);font-style:italic}
+  .close{margin-top:18px;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--sub);font-size:21px;line-height:1.35}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div class="wrap">
+      <div class="photo">
+        <img src="../photos/zhanneta_candles.jpg" alt="Жаннета">
+        <div class="cap">Жаннета</div>
+      </div>
+      <div class="text">
+        <div class="kicker">автор курса</div>
+        <h1>О Жаннете</h1>
+        <p class="intro">Здравствуйте! Уже больше <b>пяти лет</b> Таро — часть моей жизни и моя профессия. Я прошла путь с нуля до конца и собрала всё, что действительно работает, в понятную <b>авторскую систему</b>. Именно по ней Вы и будете учиться.</p>
+        <div class="list">
+          <div class="li"><span class="d"></span>Глубокий и простой разбор каждой карты Старших и Младших Арканов.</div>
+          <div class="li"><span class="d"></span>Приёмы, которые помогают <i>«услышать»</i> карту, а не гадать наугад.</div>
+          <div class="li"><span class="d"></span>Готовые расклады на частые запросы: отношения, карьера, саморазвитие.</div>
+          <div class="li"><span class="d"></span>Личное сопровождение и обратная связь на каждом этапе.</div>
+        </div>
+        <p class="close">Давайте изучать Таро вместе — осознанно, с удовольствием и с результатом.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Результаты курса</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px;margin-top:8px}
+  .r{display:flex;align-items:flex-start;gap:16px;background:rgba(255,255,255,.5);
+    border:1px solid rgba(169,131,47,.4);border-radius:14px;padding:20px 22px;position:relative}
+  .r .chk{width:46px;height:46px;flex:none;border-radius:50%;border:1.5px solid var(--gold);
+    background:rgba(255,255,255,.7);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+  .r .chk svg{width:26px;height:26px}
+  .r h3{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:23px;font-weight:600;line-height:1.05}
+  .r p{font-size:15.5px;color:var(--body);line-height:1.45;margin-top:4px}
+  .tagline{margin-top:22px;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;
+    color:var(--sub);font-size:23px}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">к чему вы придёте</div>
+      <h1 class="title">Результаты курса</h1>
+      <div class="lead">Что вы будете уметь после обучения</div>
+    </div>
+    <div class="rule"></div>
+
+    <div class="grid">
+      <div class="r"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>
+        <div><h3>Читать любую карту</h3><p>Уверенно понимать значения Старших и Младших Арканов.</p></div></div>
+      <div class="r"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>
+        <div><h3>Делать точные расклады</h3><p>На отношения, карьеру и саморазвитие — по готовым схемам.</p></div></div>
+      <div class="r"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>
+        <div><h3>Видеть сочетания</h3><p>Понимать, как карты «говорят» вместе, а не по одной.</p></div></div>
+      <div class="r"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>
+        <div><h3>Слышать интуицию</h3><p>Доверять себе и «услышать» карту, а не гадать наугад.</p></div></div>
+      <div class="r"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>
+        <div><h3>Анализировать людей</h3><p>Практикум: разбор публичных личностей через Таро.</p></div></div>
+      <div class="r"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>
+        <div><h3>Расти в практике</h3><p>Вести дневник Таро и закрепить навык на годы вперёд.</p></div></div>
+    </div>
+
+    <div class="tagline">От первой карты — к уверенному, осознанному раскладу.</div>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

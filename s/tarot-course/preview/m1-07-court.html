@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Карты Двора</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .lead2{color:var(--sub);font-style:italic;font-size:18px;margin-top:6px}
+  .court{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:24px}
+  .c{text-align:center}
+  .c .ph{width:100%;max-width:188px;height:322px;margin:0 auto;border:3px solid var(--gold);border-radius:7px;
+    overflow:hidden;background:#fff;box-shadow:0 12px 26px rgba(31,51,80,.25)}
+  .c .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .c h3{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:24px;font-weight:600;margin-top:12px}
+  .c p{font-size:15px;color:var(--body);line-height:1.4;margin-top:4px;padding:0 6px}
+  .c:nth-child(even){transform:translateY(-10px)}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">модуль 1 · придворные карты</div>
+      <h1 class="title">Карты Двора</h1>
+      <div class="lead2">16 карт-«людей»: характеры, роли и этапы зрелости</div>
+    </div>
+
+    <div class="court">
+      <div class="c">
+        <div class="ph"><img src="../cards/cups_page.jpg" alt="Паж"></div>
+        <h3>Паж</h3><p>Ученик и новичок. Новости, любопытство, начало пути.</p>
+      </div>
+      <div class="c">
+        <div class="ph"><img src="../cards/cups_knight.jpg" alt="Рыцарь"></div>
+        <h3>Рыцарь</h3><p>Действие и движение. Стремление, азарт, перемены.</p>
+      </div>
+      <div class="c">
+        <div class="ph"><img src="../cards/cups_queen.jpg" alt="Королева"></div>
+        <h3>Королева</h3><p>Зрелость и чуткость. Забота, глубина, внутренняя сила.</p>
+      </div>
+      <div class="c">
+        <div class="ph"><img src="../cards/cups_king.jpg" alt="Король"></div>
+        <h3>Король</h3><p>Мастерство и опора. Власть, ответственность, контроль.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

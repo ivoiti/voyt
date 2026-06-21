@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Прямые и перевёрнутые</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .lead2{color:var(--sub);font-style:italic;font-size:18px;margin-top:6px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:22px;align-items:start}
+  .pos{background:rgba(255,255,255,.5);border:1px solid rgba(169,131,47,.4);border-radius:16px;
+    padding:24px;display:flex;gap:22px;align-items:center}
+  .pos .ph{width:152px;height:262px;flex:none;border:3px solid var(--gold);border-radius:7px;overflow:hidden;
+    background:#fff;box-shadow:0 12px 26px rgba(31,51,80,.25)}
+  .pos .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .pos.rev .ph img{transform:rotate(180deg)}
+  .pos .t h3{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:26px;font-weight:600}
+  .pos .t .tag{display:inline-block;margin-top:6px;font-size:13px;letter-spacing:1px;text-transform:uppercase;
+    color:#fff;background:var(--gold);border-radius:30px;padding:4px 12px}
+  .pos.rev .t .tag{background:var(--sub)}
+  .pos .t p{font-size:16px;color:var(--body);line-height:1.5;margin-top:12px}
+  .pos .t .key{color:var(--ink);font-weight:700}
+  .note{margin-top:22px;text-align:center;font-style:italic;color:var(--sub);font-size:17px;line-height:1.45}
+  .note b{color:var(--ink);font-style:normal}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">модуль 1 · положение карты</div>
+      <h1 class="title">Прямые и перевёрнутые</h1>
+      <div class="lead2">Одна и та же карта звучит по-разному в зависимости от положения</div>
+    </div>
+
+    <div class="cols">
+      <div class="pos">
+        <div class="ph"><img src="../cards/major_star.jpg" alt="Звезда прямая"></div>
+        <div class="t">
+          <h3>Звезда</h3>
+          <span class="tag">прямое положение</span>
+          <p><span class="key">Надежда, вера, обновление.</span> Спокойствие, исцеление, ясный путь вперёд.</p>
+        </div>
+      </div>
+      <div class="pos rev">
+        <div class="ph"><img src="../cards/major_star.jpg" alt="Звезда перевёрнутая"></div>
+        <div class="t">
+          <h3>Звезда</h3>
+          <span class="tag">перевёрнутое</span>
+          <p><span class="key">Уныние, потеря веры.</span> Сомнения, усталость, нужно вернуть опору и надежду.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">Перевёрнутая карта — это не «плохо». Чаще это <b>ослабленное, внутреннее или заблокированное</b> значение прямой карты.</p>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

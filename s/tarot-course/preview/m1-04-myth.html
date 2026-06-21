@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Миф и реальность</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .heads{display:grid;grid-template-columns:1fr 60px 1fr;gap:0;margin-top:6px}
+  .colh{display:flex;align-items:center;gap:12px;padding:0 6px}
+  .colh .b{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--gold);background:rgba(255,255,255,.7);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);flex:none}
+  .colh .b svg{width:30px;height:30px}
+  .colh span{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600}
+  .colh.myth span{color:var(--sub)} .colh.real span{color:var(--ink)}
+  .rows{margin-top:10px;display:flex;flex-direction:column;gap:12px}
+  .row{display:grid;grid-template-columns:1fr 60px 1fr;align-items:stretch;gap:0}
+  .cell{padding:16px 20px;border-radius:13px;font-size:16.5px;line-height:1.4}
+  .myth-c{background:rgba(54,90,134,.08);border:1px solid rgba(54,90,134,.25);color:var(--sub)}
+  .real-c{background:rgba(169,131,47,.1);border:1px solid rgba(169,131,47,.45);color:var(--ink)}
+  .arr{display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:24px}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">модуль 1 · с чего начать</div>
+      <h1 class="title">Миф и реальность</h1>
+    </div>
+    <div class="rule"></div>
+
+    <div class="heads">
+      <div class="colh myth"><div class="b"><svg viewBox="0 0 64 64" class="ico"><path d="M42 12 A21 21 0 1 0 42 52 A16 16 0 1 1 42 12 Z"/></svg></div><span>Миф</span></div>
+      <div></div>
+      <div class="colh real"><div class="b"><svg viewBox="0 0 64 64" class="ico"><path d="M10 32 C20 21 44 21 54 32 C44 43 20 43 10 32 Z"/><circle cx="32" cy="32" r="6"/></svg></div><span>Реальность</span></div>
+    </div>
+
+    <div class="rows">
+      <div class="row">
+        <div class="cell myth-c">«Карты предсказывают судьбу заранее»</div>
+        <div class="arr">→</div>
+        <div class="cell real-c">Таро показывает тенденции и помогает осознанно выбрать путь</div>
+      </div>
+      <div class="row">
+        <div class="cell myth-c">«Нужен особый дар, иначе не получится»</div>
+        <div class="arr">→</div>
+        <div class="cell real-c">Чтению можно научиться — это система, логика и практика</div>
+      </div>
+      <div class="row">
+        <div class="cell myth-c">«Карты дают точный ответ да или нет»</div>
+        <div class="arr">→</div>
+        <div class="cell real-c">Карты дают смыслы и контекст — решение всегда за человеком</div>
+      </div>
+      <div class="row">
+        <div class="cell myth-c">«Таро — это страшно и мистично»</div>
+        <div class="arr">→</div>
+        <div class="cell real-c">Это бережный инструмент самопознания и анализа ситуаций</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

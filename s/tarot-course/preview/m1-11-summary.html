@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Итоги модуля 1</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .cols{display:flex;gap:44px;margin-top:8px;align-items:stretch}
+  .left{flex:1.05}
+  .left h2{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:26px;font-weight:600;margin-bottom:14px}
+  .li{display:flex;align-items:flex-start;gap:13px;margin-bottom:13px;font-size:17px;color:var(--body);line-height:1.4}
+  .li .chk{width:34px;height:34px;flex:none;border-radius:50%;border:1.5px solid var(--gold);
+    background:rgba(255,255,255,.6);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+  .li .chk svg{width:20px;height:20px}
+  .right{flex:.95;display:flex}
+  .quote{flex:1;background:linear-gradient(160deg,rgba(169,131,47,.12),rgba(47,111,166,.1));
+    border:1px solid rgba(169,131,47,.45);border-radius:18px;padding:38px 34px;
+    display:flex;flex-direction:column;justify-content:center;position:relative}
+  .quote::before{content:"\201C";position:absolute;top:6px;left:24px;font-family:'Cormorant Garamond',serif;
+    color:rgba(169,131,47,.35);font-size:120px;line-height:1}
+  .quote p{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink);font-size:30px;line-height:1.3;position:relative}
+  .quote .who{margin-top:22px;display:flex;align-items:center;gap:12px}
+  .quote .who .ln{width:40px;height:1px;background:var(--gold)}
+  .quote .who span{color:var(--gold);font-size:18px;letter-spacing:.5px}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">модуль 1 завершён</div>
+      <h1 class="title">Итоги модуля</h1>
+    </div>
+    <div class="rule"></div>
+
+    <div class="cols">
+      <div class="left">
+        <h2>Теперь вы знаете:</h2>
+        <div class="li"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>что такое Таро — и чем оно на самом деле не является;</div>
+        <div class="li"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>как устроена колода: 78 карт, Старшие и Младшие Арканы;</div>
+        <div class="li"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>масти и стихии, роли придворных карт;</div>
+        <div class="li"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>как читаются прямые и перевёрнутые положения;</div>
+        <div class="li"><div class="chk"><svg viewBox="0 0 64 64" class="ico"><path d="M16 33 l11 11 22 -26"/></svg></div>как выбрать колоду и вести дневник Таро.</div>
+      </div>
+      <div class="right">
+        <div class="quote">
+          <p>Кто смотрит наружу — видит сны.<br>Кто смотрит внутрь — пробуждается.</p>
+          <div class="who"><span class="ln"></span><span>Карл Густав Юнг</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>
