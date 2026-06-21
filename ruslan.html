@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Руслан Гайфутдинов — дизайнер сайтов и брендов</title>
+<meta name="description" content="Руслан Гайфутдинов — дизайнер сайтов под ключ, фирменный стиль, логотипы. Сайты на Tilda и не только. Москва.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f3f1e9;
+    --bg2:#eae6da;
+    --ink:#1c2440;
+    --ink-soft:#46506e;
+    --accent:#b0402a;
+    --accent2:#1c2440;
+    --line:#d8d2c2;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Inter',sans-serif;font-weight:400;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.1}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .muted{color:var(--ink-soft)}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(243,241,233,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.5px}
+  .logo span{color:var(--accent)}
+  nav.links{display:flex;gap:26px;align-items:center}
+  nav.links a{font-size:14px;text-decoration:none;color:var(--ink-soft);transition:color .2s}
+  nav.links a:hover{color:var(--accent)}
+  .lang{display:flex;gap:2px;border:1px solid var(--line);border-radius:20px;overflow:hidden;font-size:12px}
+  .lang button{border:0;background:transparent;padding:5px 11px;cursor:pointer;color:var(--ink-soft);font-family:inherit}
+  .lang button.on{background:var(--ink);color:var(--bg)}
+  .menu-btn{display:none;border:0;background:none;font-size:24px;cursor:pointer;color:var(--ink)}
+
+  /* HERO */
+  .hero{padding:78px 0 56px}
+  .hero-grid{display:grid;grid-template-columns:1.45fr .72fr;gap:56px;align-items:center}
+  .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  .hero h1{font-size:clamp(48px,7vw,92px);letter-spacing:-1px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero .lead{font-size:20px;margin:22px 0 30px;max-width:30em;color:var(--ink-soft)}
+  .hero-photo{position:relative;justify-self:end;width:100%;max-width:288px}
+  .hero-photo::before{content:"";position:absolute;inset:20px -20px -20px 20px;border:1px solid var(--accent);border-radius:var(--radius);z-index:0}
+  .hero-photo img{position:relative;z-index:1;border-radius:var(--radius);aspect-ratio:3/4;object-fit:cover;object-position:center 18%;box-shadow:0 16px 40px rgba(28,36,64,.16)}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 26px;border-radius:30px;text-decoration:none;font-size:15px;font-weight:500;transition:.2s}
+  .btn-primary{background:var(--ink);color:var(--bg)}
+  .btn-primary:hover{background:var(--accent)}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+  /* SECTION */
+  section{padding:64px 0}
+  .sec-head{margin-bottom:38px;max-width:46em}
+  .sec-head .eyebrow{margin-bottom:12px}
+  .sec-head h2{font-size:clamp(34px,5vw,52px)}
+  .sec-head p{margin-top:14px;font-size:18px;color:var(--ink-soft)}
+
+  /* SERVICES */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+  .card .num{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--accent)}
+  .card h3{font-size:25px;margin:8px 0 10px}
+  .card p{font-size:15px;color:var(--ink-soft)}
+  .card ul{margin:14px 0 0;padding-left:18px;font-size:14px;color:var(--ink-soft)}
+  .card li{margin:4px 0}
+
+  /* WORKS */
+  .works{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .work{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+  .work.web{grid-column:1 / -1}
+  .work .thumb{background:var(--bg2);overflow:hidden}
+  .work .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .work:hover .thumb img{transform:scale(1.03)}
+  .work-body{padding:22px 24px}
+  .tag{display:inline-block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .work-body h3{font-size:26px}
+  .work-body p{font-size:14px;color:var(--ink-soft);margin-top:8px}
+  .web-shots{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:0;background:var(--ink)}
+  .web-shots img{width:100%;height:340px;object-fit:cover;object-position:top}
+  .web-shots img.mob{height:340px;object-fit:contain;background:#222;padding:10px 0}
+  .shot{display:block}
+  .shot img{width:100%;display:block}
+  .work-link{display:inline-block;margin-top:14px;font-size:14px;font-weight:500;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
+  .work-link:hover{border-color:var(--accent)}
+
+  /* HERO / ABOUT (no portrait) */
+  .about-single{max-width:760px}
+  .hero-2{display:grid;grid-template-columns:1.2fr .85fr;gap:52px;align-items:center}
+  .hero-collage{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .hero-collage::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--accent);border-radius:16px;z-index:0}
+  .hero-collage img{position:relative;z-index:1;width:100%;border-radius:12px;object-fit:cover;box-shadow:0 14px 34px rgba(28,36,64,.14)}
+  .hero-collage .wide{grid-column:1 / -1;height:190px}
+  .hero-collage .sq{height:152px}
+  .hero-collage .cap{position:relative;z-index:1;grid-column:1/-1;font-size:12px;letter-spacing:.5px;color:var(--ink-soft);text-align:right;margin-top:-2px}
+
+  /* PRODUCT GALLERY strip (inside a full-width work) */
+  .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--ink)}
+  .gallery img{width:100%;height:300px;object-fit:cover;object-position:center;transition:transform .5s}
+  .gallery img:hover{transform:scale(1.04)}
+
+  /* ART grid */
+  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .art-grid figure{margin:0}
+  .art-grid img{border-radius:10px;aspect-ratio:4/5;object-fit:cover;width:100%;box-shadow:0 10px 26px rgba(28,36,64,.12)}
+  .art-grid figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:9px}
+  .art-cv{margin-top:30px;font-size:14.5px;line-height:1.7;color:var(--ink-soft);max-width:58em}
+  .art-cv b{color:var(--ink);font-weight:600}
+  .art-cv a:not(.work-link){color:var(--accent);text-decoration:none;border-bottom:1px solid rgba(176,64,42,.35)}
+  .art-cv a:not(.work-link):hover{border-color:var(--accent)}
+  .art-cv .work-link{margin-top:0}
+
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .step .n{font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--line);line-height:1}
+  .step h3{font-size:20px;margin:6px 0}
+  .step p{font-size:14px;color:var(--ink-soft)}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:.7fr 1.1fr;gap:46px;align-items:center}
+  .about-grid img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;object-position:center 15%;max-width:330px;width:100%}
+  .about-grid h2{font-size:clamp(32px,4.5vw,46px);margin-bottom:18px}
+  .about-grid p{font-size:17px;color:var(--ink-soft);margin-bottom:14px}
+
+  /* CONTACT */
+  .contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:60px;text-align:center;margin:20px 0 0}
+  .contact h2{font-size:clamp(34px,5vw,56px);color:var(--bg)}
+  .contact p{color:#c3c8db;font-size:18px;margin:16px auto 30px;max-width:34em}
+  .contact-row{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;font-size:16px}
+  .contact-row a{color:var(--bg);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:2px}
+  .contact-row a:hover{border-color:var(--bg)}
+
+  footer{text-align:center;padding:40px 0;font-size:13px;color:var(--ink-soft)}
+
+  [data-en]{display:none}
+  body.en [data-ru]{display:none}
+  body.en [data-en]{display:revert}
+
+  @media(max-width:860px){
+    .hero-2{grid-template-columns:1fr;gap:38px}
+    .hero-collage{order:-1;max-width:420px}
+    .hero-collage::before{inset:12px -12px -12px 12px}
+    .services,.steps{grid-template-columns:1fr 1fr}
+    .works{grid-template-columns:1fr}
+    .about-grid{grid-template-columns:1fr;gap:24px}
+    .web-shots{grid-template-columns:1fr 1fr}
+    .web-shots img:first-child{grid-column:1/-1}
+    .gallery{grid-template-columns:repeat(3,1fr)}
+    .gallery img{height:220px}
+    .art-grid{grid-template-columns:1fr 1fr}
+    nav.links{display:none}
+    nav.links.open{display:flex;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px 28px;gap:16px;border-bottom:1px solid var(--line)}
+    .menu-btn{display:block}
+    .contact{padding:40px 24px}
+  }
+  @media(max-width:560px){
+    .services,.steps{grid-template-columns:1fr}
+    .web-shots{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <div class="logo">Руслан <span>Гайфутдинов</span></div>
+    <nav class="links" id="links">
+      <a href="#works" data-ru>Работы</a><a href="#works" data-en>Work</a>
+      <a href="#services" data-ru>Услуги</a><a href="#services" data-en>Services</a>
+      <a href="#about" data-ru>Обо мне</a><a href="#about" data-en>About</a>
+      <a href="#contact" data-ru>Контакты</a><a href="#contact" data-en>Contact</a>
+    </nav>
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="lang">
+        <button class="on" onclick="setLang('ru')" id="b-ru">RU</button>
+        <button onclick="setLang('en')" id="b-en">EN</button>
+      </div>
+      <button class="menu-btn" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-2">
+    <div>
+      <div class="eyebrow" data-ru>Дизайнер сайтов и брендов</div>
+      <div class="eyebrow" data-en>Web & Brand Designer</div>
+      <h1 data-ru>Сайты, которые<br><em>продают</em> и&nbsp;запоминаются</h1>
+      <h1 data-en>Websites that<br><em>sell</em> and stay in mind</h1>
+      <p class="lead" data-ru>Проектирую и собираю сайты под ключ — от лендинга до интернет-магазина — и создаю фирменный стиль, в котором бренд выглядит цельно и узнаваемо.</p>
+      <p class="lead" data-en>I design and build websites end-to-end — from landing pages to online stores — and create brand identities where everything looks cohesive and recognisable.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#works" data-ru>Смотреть работы</a>
+        <a class="btn btn-primary" href="#works" data-en>View work</a>
+        <a class="btn btn-ghost" href="#contact" data-ru>Обсудить проект</a>
+        <a class="btn btn-ghost" href="#contact" data-en>Start a project</a>
+      </div>
+    </div>
+    <div class="hero-collage">
+      <img class="wide" src="assets/prvz_showcase.jpg" alt="Сайт PRVZ">
+      <img class="sq" src="assets/prvz_logo.jpg" alt="Айдентика">
+      <img class="sq" src="assets/prvz_brooch1.jpg" alt="Айдентика и предметная съёмка">
+      <div class="cap" data-ru>сайты · бренды</div><div class="cap" data-en>web · brand</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-ru>Услуги</div><div class="eyebrow" data-en>Services</div>
+      <h2 data-ru>Что я делаю</h2><h2 data-en>What I do</h2>
+      <p data-ru>Полный цикл: от идеи и структуры до готового сайта и фирменного стиля.</p>
+      <p data-en>Full cycle: from idea and structure to a finished website and brand identity.</p>
+    </div>
+    <div class="services">
+      <div class="card">
+        <div class="num">01</div>
+        <h3 data-ru>Сайты под ключ</h3><h3 data-en>Websites</h3>
+        <p data-ru>Лендинги, многостраничники, интернет-магазины. Дизайн, сборка, публикация.</p>
+        <p data-en>Landings, multi-page sites, online stores. Design, build, launch.</p>
+        <ul>
+          <li data-ru>Структура и прототип</li><li data-en>Structure & prototype</li>
+          <li data-ru>Дизайн под бренд</li><li data-en>On-brand design</li>
+          <li data-ru>Адаптив под телефон</li><li data-en>Mobile-responsive</li>
+          <li data-ru>Tilda, Webflow и другие платформы</li><li data-en>Tilda, Webflow & more</li>
+          <li data-ru>Вёрстка с нуля на коде</li><li data-en>Custom-coded builds</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3 data-ru>Фирменный стиль</h3><h3 data-en>Brand identity</h3>
+        <p data-ru>Логотип, палитра, шрифты, носители — система, а не просто картинка.</p>
+        <p data-en>Logo, palette, type, collateral — a system, not just a picture.</p>
+        <ul>
+          <li data-ru>Логотип и знак</li><li data-en>Logo & mark</li>
+          <li data-ru>Гайдлайн</li><li data-en>Brand guidelines</li>
+          <li data-ru>Соцсети и упаковка</li><li data-en>Social & packaging</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3 data-ru>Полиграфия, вёрстка, арт</h3><h3 data-en>Print, layout & art</h3>
+        <p data-ru>Каталоги, книги, презентации, плакаты. Художественный взгляд в основе.</p>
+        <p data-en>Catalogues, books, decks, posters. With an artist's eye at the core.</p>
+        <ul>
+          <li data-ru>Вёрстка книг и каталогов</li><li data-en>Book & catalogue layout</li>
+          <li data-ru>Презентации и буклеты</li><li data-en>Presentations & booklets</li>
+          <li data-ru>Плакаты и афиши</li><li data-en>Posters</li>
+          <li data-ru>Иллюстрация</li><li data-en>Illustration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-ru>Избранное</div><div class="eyebrow" data-en>Selected work</div>
+      <h2 data-ru>Работы</h2><h2 data-en>Work</h2>
+    </div>
+    <div class="works">
+
+      <!-- PRVZ WEB -->
+      <article class="work web">
+        <a class="shot" href="https://prvz-jewelry.ru/" target="_blank" rel="noopener">
+          <img src="assets/prvz_showcase.jpg" alt="Сайт PRVZ — десктоп и мобильная версия">
+        </a>
+        <div class="work-body">
+          <span class="tag" data-ru>Сайт · Интернет-магазин</span><span class="tag" data-en>Website · E-commerce</span>
+          <h3>PRVZ Jewelry</h3>
+          <p data-ru>Интернет-магазин украшений ручной работы: каталог, карточки товаров, раздел о бренде. Дизайн, сборка и публикация с адаптивом под телефон.</p>
+          <p data-en>Online store for handmade jewellery: catalogue, product pages, brand story. Designed, built and launched — fully mobile-responsive.</p>
+          <a class="work-link" href="https://prvz-jewelry.ru/" target="_blank" rel="noopener" data-ru>Открыть сайт →</a><a class="work-link" href="https://prvz-jewelry.ru/" target="_blank" rel="noopener" data-en>Visit the site →</a>
+        </div>
+      </article>
+
+      <!-- Елена Семёнова — executive coach -->
+      <article class="work">
+        <a class="shot" href="https://coachsemenova.com" target="_blank" rel="noopener"><div class="thumb"><img src="assets/case_coach.jpg" alt="Сайт Елены Семёновой" style="height:300px;object-fit:cover"></div></a>
+        <div class="work-body">
+          <span class="tag" data-ru>Сайт · Многостраничник</span><span class="tag" data-en>Website · Multi-page</span>
+          <h3>Елена Семёнова — коуч</h3>
+          <p data-ru>Сайт для executive- и командного коуча: структура, дизайн и сборка на Tilda. Опыт, услуги, события и заявки — в одном многостраничнике.</p>
+          <p data-en>Website for an executive and team coach: structure, design and build on Tilda — services, events and lead capture in one multi-page site.</p>
+          <a class="work-link" href="https://coachsemenova.com" target="_blank" rel="noopener" data-ru>Открыть сайт →</a><a class="work-link" href="https://coachsemenova.com" target="_blank" rel="noopener" data-en>Visit the site →</a>
+        </div>
+      </article>
+
+      <!-- РСК Сервис — кузовной ремонт (доработка) -->
+      <article class="work">
+        <a class="shot" href="https://rsc-service-lodochnaya.ru/" target="_blank" rel="noopener"><div class="thumb"><img src="assets/case_rsc.jpg" alt="Сайт РСК Сервис" style="height:300px;object-fit:cover"></div></a>
+        <div class="work-body">
+          <span class="tag" data-ru>Сайт · Доработка и поддержка</span><span class="tag" data-en>Website · Refinement</span>
+          <h3>РСК Сервис</h3>
+          <p data-ru>Кузовной ремонт премиум-класса. Доработка и развитие сайта: правки структуры и дизайна, блоки под конверсию — заявки через WhatsApp, кейсы «до / после».</p>
+          <p data-en>Premium body shop. Ongoing site refinement: structure and design edits, conversion blocks — WhatsApp leads and before/after cases.</p>
+          <a class="work-link" href="https://rsc-service-lodochnaya.ru/" target="_blank" rel="noopener" data-ru>Открыть сайт →</a><a class="work-link" href="https://rsc-service-lodochnaya.ru/" target="_blank" rel="noopener" data-en>Visit the site →</a>
+        </div>
+      </article>
+
+      <!-- Ai4G — нейросервис -->
+      <article class="work">
+        <a class="shot" href="https://ai4g.ru/" target="_blank" rel="noopener"><div class="thumb"><img src="assets/case_ai4g.jpg" alt="Сайт нейросервиса Ai4G" style="height:300px;object-fit:cover"></div></a>
+        <div class="work-body">
+          <span class="tag" data-ru>Сайт · Нейросервис</span><span class="tag" data-en>Website · Product</span>
+          <h3>Ai4G — нейросервис</h3>
+          <p data-ru>Сайт нейросервиса для построения траектории развития: ИИ-диагностика, продуктовая линейка, наставничество. Структура, дизайн и сборка многостраничника на Tilda.</p>
+          <p data-en>Website for an AI-driven personal-growth service: diagnostics, product line, mentoring. Structure, design and multi-page build on Tilda.</p>
+          <a class="work-link" href="https://ai4g.ru/" target="_blank" rel="noopener" data-ru>Открыть сайт →</a><a class="work-link" href="https://ai4g.ru/" target="_blank" rel="noopener" data-en>Visit the site →</a>
+        </div>
+      </article>
+
+      <!-- Очерчивая воздух — PRVZ × BoChicca -->
+      <article class="work web">
+        <div class="gallery">
+          <img src="assets/prvz_sash1.jpg" alt="Перевязь PRVZ">
+          <img src="assets/prvz_brooch1.jpg" alt="Брошь-орден BoChicca">
+          <img src="assets/prvz_brooch3.jpg" alt="Брошь-орден BoChicca">
+          <img src="assets/prvz_brooch4.jpg" alt="Парные броши">
+          <img src="assets/prvz_sash2.jpg" alt="Перевязь PRVZ">
+        </div>
+        <div class="work-body">
+          <span class="tag" data-ru>Айдентика · Каталог · Предметная съёмка</span><span class="tag" data-en>Identity · Catalogue · Product photography</span>
+          <h3>«Очерчивая воздух» · PRVZ × BoChicca</h3>
+          <p data-ru>Айдентика и каталог выставки коллаборации PRVZ × BoChicca (Sample Design Fair 2024): современные перевязи и броши-ордена как wearable art. Концепция, предметная съёмка, арт-дирекшн и вёрстка каталога.</p>
+          <p data-en>Identity and catalogue for the PRVZ × BoChicca exhibition (Sample Design Fair 2024): modern sashes and brooch-orders as wearable art. Concept, product photography, art direction and catalogue layout.</p>
+        </div>
+      </article>
+
+      <!-- PRVZ identity -->
+      <article class="work">
+        <div class="thumb"><img src="assets/prvz_logo.jpg" alt="PRVZ айдентика" style="height:300px"></div>
+        <div class="work-body">
+          <span class="tag" data-ru>Фирменный стиль</span><span class="tag" data-en>Brand identity</span>
+          <h3>PRVZ — айдентика</h3>
+          <p data-ru>Логотип и фирменный стиль ювелирного бренда. Шрифтовое решение на основе ранней кириллицы, чёрно-белый и цветной знак.</p>
+          <p data-en>Logo and identity for a jewellery brand. Type-driven mark based on early Cyrillic, in monochrome and colour.</p>
+        </div>
+      </article>
+
+      <!-- Да-да! — арт-коучинг (ESVI) -->
+      <article class="work">
+        <a class="shot" href="https://ai4g.ru/art-coaching.html" target="_blank" rel="noopener"><div class="thumb"><img src="assets/esvi.jpg" alt="Да-да! — арт-коучинг" style="height:300px"></div></a>
+        <div class="work-body">
+          <span class="tag" data-ru>Айдентика · Арт-коучинг</span><span class="tag" data-en>Identity · Art-coaching</span>
+          <h3>«Да-да!» — арт-коучинг</h3>
+          <p data-ru>Айдентика мастерской «Да-да!» и программа арт-коучинга «Перезагрузка через творчество»: пять сессий — рисунок цветом, абстракция, коллаж, реди-мейд, автопортрет — где творчество становится инструментом найти личную стратегию. Я сделала фирменный стиль и веду программу вместе с коучем Еленой Семёновой.</p>
+          <p data-en>Identity for the «Da-da!» studio and the «Reset through creativity» art-coaching programme — five sessions where art becomes a tool for personal strategy. I created the identity and co-lead the programme with coach Elena Semenova.</p>
+          <a class="work-link" href="https://ai4g.ru/art-coaching.html" target="_blank" rel="noopener" data-ru>Программа арт-коучинга →</a><a class="work-link" href="https://ai4g.ru/art-coaching.html" target="_blank" rel="noopener" data-en>Art-coaching programme →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-ru>Процесс</div><div class="eyebrow" data-en>Process</div>
+      <h2 data-ru>Как мы работаем</h2><h2 data-en>How we work</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3 data-ru>Бриф</h3><h3 data-en>Brief</h3><p data-ru>Разбираемся в задаче, аудитории и целях. Согласуем смету и сроки.</p><p data-en>We unpack the task, audience and goals. Agree scope and timeline.</p></div>
+      <div class="step"><div class="n">2</div><h3 data-ru>Структура</h3><h3 data-en>Structure</h3><p data-ru>Прототип и логика страниц до отрисовки — чтобы не переделывать.</p><p data-en>Prototype and page logic before visuals — so nothing gets redone.</p></div>
+      <div class="step"><div class="n">3</div><h3 data-ru>Дизайн</h3><h3 data-en>Design</h3><p data-ru>Визуальное решение под бренд, правки, финальная сборка.</p><p data-en>On-brand visual design, revisions, final build.</p></div>
+      <div class="step"><div class="n">4</div><h3 data-ru>Запуск</h3><h3 data-en>Launch</h3><p data-ru>Публикация, адаптив, передача и инструкция как обновлять.</p><p data-en>Launch, responsiveness, handover and how-to-update guide.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--bg2)">
+  <div class="wrap about-single">
+    <div>
+      <div class="eyebrow" data-ru>Обо мне</div><div class="eyebrow" data-en>About</div>
+      <h2 data-ru>Руслан Гайфутдинов</h2><h2 data-en>Ruslan Gaifutdinov</h2>
+      <p data-ru>Дизайнер сайтов и брендов из Москвы. Делаю сайты, фирменный стиль и полиграфию, в которых форма работает на смысл. За плечами — бренды, интернет-магазины, айдентика и оформление для бизнеса и частной практики.</p>
+      <p data-en>Web and brand designer based in Moscow. I make websites, brand identities and print where form works for meaning. Behind me — brands, online stores, identities for businesses and private practices.</p>
+      <p data-ru>Внимание к деталям, чистая структура и характер — то, чего нет у шаблонных решений. Работаю аккуратно, по срокам и в диалоге.</p>
+      <p data-en>Attention to detail, clean structure and character is what template solutions lack. I work tidily, on schedule, in dialogue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div class="eyebrow" style="color:#e0a596" data-ru>Контакты</div>
+      <div class="eyebrow" style="color:#e0a596" data-en>Contact</div>
+      <h2 data-ru>Расскажите о проекте</h2><h2 data-en>Tell me about your project</h2>
+      <p data-ru>Сайт, логотип или всё сразу — напишите, обсудим задачу и сроки. Отвечаю быстро.</p>
+      <p data-en>A website, a logo or everything at once — message me and we'll discuss scope and timing. Quick to reply.</p>
+      <div class="contact-row">
+        <a href="https://wa.me/79019847052">WhatsApp</a>
+        <a href="https://t.me/Nfrtum">Telegram</a>
+        <a href="tel:+79019847052">+7 901 984-70-52</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Руслан Гайфутдинов · Москва</div>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.classList.toggle('en', l==='en');
+    document.documentElement.lang=l;
+    document.getElementById('b-ru').classList.toggle('on', l==='ru');
+    document.getElementById('b-en').classList.toggle('on', l==='en');
+  }
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
+</script>
+</body>
+</html>
