@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Татьяна Войт — дизайнер презентаций, сайтов и вёрстки</title>
+<meta name="description" content="Татьяна Войт — дизайн презентаций, лендингов и сайтов, вёрстка. Британка, Bang Bang Education, Bonnie&Slide. Москва.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f3f1e9;
+    --bg2:#eae6da;
+    --ink:#1c2440;
+    --ink-soft:#46506e;
+    --accent:#b0402a;
+    --accent2:#1c2440;
+    --line:#d8d2c2;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Inter',sans-serif;font-weight:400;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.1}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+  .muted{color:var(--ink-soft)}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(243,241,233,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:.5px}
+  .logo span{color:var(--accent)}
+  nav.links{display:flex;gap:26px;align-items:center}
+  nav.links a{font-size:14px;text-decoration:none;color:var(--ink-soft);transition:color .2s}
+  nav.links a:hover{color:var(--accent)}
+  .lang{display:flex;gap:2px;border:1px solid var(--line);border-radius:20px;overflow:hidden;font-size:12px}
+  .lang button{border:0;background:transparent;padding:5px 11px;cursor:pointer;color:var(--ink-soft);font-family:inherit}
+  .lang button.on{background:var(--ink);color:var(--bg)}
+  .menu-btn{display:none;border:0;background:none;font-size:24px;cursor:pointer;color:var(--ink)}
+
+  /* HERO */
+  .hero{padding:78px 0 56px}
+  .eyebrow{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+  .hero h1{font-size:clamp(48px,7vw,92px);letter-spacing:-1px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero .lead{font-size:20px;margin:22px 0 30px;max-width:30em;color:var(--ink-soft)}
+  .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 26px;border-radius:30px;text-decoration:none;font-size:15px;font-weight:500;transition:.2s}
+  .btn-primary{background:var(--ink);color:var(--bg)}
+  .btn-primary:hover{background:var(--accent)}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+  /* SECTION */
+  section{padding:64px 0}
+  .sec-head{margin-bottom:38px;max-width:46em}
+  .sec-head .eyebrow{margin-bottom:12px}
+  .sec-head h2{font-size:clamp(34px,5vw,52px)}
+  .sec-head p{margin-top:14px;font-size:18px;color:var(--ink-soft)}
+
+  /* SERVICES */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+  .card .num{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--accent)}
+  .card h3{font-size:25px;margin:8px 0 10px}
+  .card p{font-size:15px;color:var(--ink-soft)}
+  .card ul{margin:14px 0 0;padding-left:18px;font-size:14px;color:var(--ink-soft)}
+  .card li{margin:4px 0}
+
+  /* WORKS */
+  .works{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .work{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+  .work.web{grid-column:1 / -1}
+  .work-body{padding:22px 24px}
+  .tag{display:inline-block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .work-body h3{font-size:26px}
+  .work-body p{font-size:14px;color:var(--ink-soft);margin-top:8px}
+  .work-link{display:inline-block;margin-top:14px;font-size:14px;font-weight:500;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
+  .work-link:hover{border-color:var(--accent)}
+
+  /* PLACEHOLDERS — заменить на реальные изображения (см. data-note) */
+  .ph{position:relative;width:100%;display:flex;align-items:center;justify-content:center;
+      color:#fff;text-align:center;font-size:13px;letter-spacing:.5px;padding:18px;
+      background:linear-gradient(135deg,#2b3358 0%,#46506e 60%,#b0402a 140%)}
+  .ph.alt{background:linear-gradient(135deg,#7a2b1c 0%,#b0402a 55%,#46506e 150%)}
+  .ph.tall{aspect-ratio:4/5}
+  .ph.wide{height:300px}
+  .ph small{display:block;opacity:.75;margin-top:6px;font-size:11px;text-transform:uppercase;letter-spacing:2px}
+
+  /* PRODUCT GALLERY strip */
+  .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--ink)}
+  .gallery .ph{height:300px}
+
+  /* THEATRE grid (личное) */
+  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .art-grid figure{margin:0}
+  .art-grid .ph{border-radius:10px;aspect-ratio:4/5;box-shadow:0 10px 26px rgba(28,36,64,.12)}
+  .art-grid figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:9px}
+  .art-cv{margin-top:30px;font-size:14.5px;line-height:1.7;color:var(--ink-soft);max-width:58em}
+  .art-cv b{color:var(--ink);font-weight:600}
+
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .step .n{font-family:'Cormorant Garamond',serif;font-size:46px;color:var(--line);line-height:1}
+  .step h3{font-size:20px;margin:6px 0}
+  .step p{font-size:14px;color:var(--ink-soft)}
+
+  /* ABOUT */
+  .about-single{max-width:760px}
+
+  /* CONTACT */
+  .contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:60px;text-align:center;margin:20px 0 0}
+  .contact h2{font-size:clamp(34px,5vw,56px);color:var(--bg)}
+  .contact p{color:#c3c8db;font-size:18px;margin:16px auto 30px;max-width:34em}
+  .contact-row{display:flex;gap:30px;justify-content:center;flex-wrap:wrap;font-size:16px}
+  .contact-row a{color:var(--bg);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:2px}
+  .contact-row a:hover{border-color:var(--bg)}
+
+  footer{text-align:center;padding:40px 0;font-size:13px;color:var(--ink-soft)}
+
+  [data-en]{display:none}
+  body.en [data-ru]{display:none}
+  body.en [data-en]{display:revert}
+
+  @media(max-width:860px){
+    .services,.steps{grid-template-columns:1fr 1fr}
+    .works{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(3,1fr)}
+    .art-grid{grid-template-columns:1fr 1fr}
+    nav.links{display:none}
+    nav.links.open{display:flex;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px 28px;gap:16px;border-bottom:1px solid var(--line)}
+    .menu-btn{display:block}
+    .contact{padding:40px 24px}
+  }
+  @media(max-width:560px){
+    .services,.steps{grid-template-columns:1fr}
+    .gallery{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <div class="logo">Татьяна <span>Войт</span></div>
+    <nav class="links" id="links">
+      <a href="#works" data-ru>Работы</a><a href="#works" data-en>Work</a>
+      <a href="#services" data-ru>Услуги</a><a href="#services" data-en>Services</a>
+      <a href="#theatre" data-ru>Театр</a><a href="#theatre" data-en>Theatre</a>
+      <a href="#about" data-ru>Обо мне</a><a href="#about" data-en>About</a>
+      <a href="#contact" data-ru>Контакты</a><a href="#contact" data-en>Contact</a>
+    </nav>
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="lang">
+        <button class="on" onclick="setLang('ru')" id="b-ru">RU</button>
+        <button onclick="setLang('en')" id="b-en">EN</button>
+      </div>
+      <button class="menu-btn" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap about-single">
+    <div class="eyebrow" data-ru>Дизайнер-сторителлер · презентации, сайты, вёрстка</div>
+    <div class="eyebrow" data-en>Designer &amp; storyteller · decks, websites, layout</div>
+    <h1 data-ru>Выстраиваю историю —<br>на слайде, на странице,<br>на&nbsp;<em>сцене</em></h1>
+    <h1 data-en>I build the story —<br>on the slide, the page<br>and the&nbsp;<em>stage</em></h1>
+    <p class="lead" data-ru>Дизайнер презентаций, сайтов и вёрстки — и театральный режиссёр. У дизайна и режиссуры одна основа: выстроить историю и провести зрителя к решению. Поэтому мои презентации и сайты не просто красивы — они ведут и убеждают.</p>
+    <p class="lead" data-en>Presentation, web and layout designer — and a theatre director. Design and directing share one core: build a story and lead the viewer to a decision. So my decks and websites don't just look good — they guide and convince.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href="#works" data-ru>Смотреть работы</a>
+      <a class="btn btn-primary" href="#works" data-en>View work</a>
+      <a class="btn btn-ghost" href="#contact" data-ru>Обсудить проект</a>
+      <a class="btn btn-ghost" href="#contact" data-en>Start a project</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-ru>Услуги</div><div class="eyebrow" data-en>Services</div>
+      <h2 data-ru>Что я делаю</h2><h2 data-en>What I do</h2>
+      <p data-ru>Полный цикл: от структуры и смысла до готовой презентации, сайта и аккуратной вёрстки.</p>
+      <p data-en>Full cycle: from structure and meaning to a finished deck, website and tidy layout.</p>
+    </div>
+    <div class="services">
+      <div class="card">
+        <div class="num">01</div>
+        <h3 data-ru>Дизайн презентаций</h3><h3 data-en>Presentation design</h3>
+        <p data-ru>Питч-деки, корпоративные и образовательные презентации. Структура, сторителлинг, выразительные слайды.</p>
+        <p data-en>Pitch decks, corporate and educational presentations. Structure, storytelling, expressive slides.</p>
+        <ul>
+          <li data-ru>Структура и логика повествования</li><li data-en>Narrative structure &amp; logic</li>
+          <li data-ru>Питч-деки и инвест-презентации</li><li data-en>Pitch &amp; investor decks</li>
+          <li data-ru>Шаблоны под бренд</li><li data-en>On-brand templates</li>
+          <li data-ru>Инфографика и схемы</li><li data-en>Infographics &amp; diagrams</li>
+          <li data-ru>PowerPoint, Keynote, Figma, Tilda</li><li data-en>PowerPoint, Keynote, Figma, Tilda</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3 data-ru>Сайты и лендинги</h3><h3 data-en>Websites &amp; landings</h3>
+        <p data-ru>Лендинги и многостраничники: структура, дизайн, сборка и публикация с адаптивом под телефон.</p>
+        <p data-en>Landings and multi-page sites: structure, design, build and launch — fully mobile-responsive.</p>
+        <ul>
+          <li data-ru>Прототип и структура</li><li data-en>Prototype &amp; structure</li>
+          <li data-ru>Дизайн под бренд</li><li data-en>On-brand design</li>
+          <li data-ru>Адаптив под телефон</li><li data-en>Mobile-responsive</li>
+          <li data-ru>Сборка на Tilda</li><li data-en>Build on Tilda</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3 data-ru>Вёрстка и полиграфия</h3><h3 data-en>Layout &amp; print</h3>
+        <p data-ru>Буклеты, каталоги, методички, программы. Чистая типографика и аккуратная сетка.</p>
+        <p data-en>Booklets, catalogues, workbooks, programmes. Clean typography and a tidy grid.</p>
+        <ul>
+          <li data-ru>Вёрстка буклетов и каталогов</li><li data-en>Booklet &amp; catalogue layout</li>
+          <li data-ru>Методички и программы</li><li data-en>Workbooks &amp; programmes</li>
+          <li data-ru>Афиши и плакаты</li><li data-en>Posters &amp; playbills</li>
+          <li data-ru>Подготовка к печати</li><li data-en>Print-ready files</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKS -->
+<section id="works" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-ru>Избранное</div><div class="eyebrow" data-en>Selected work</div>
+      <h2 data-ru>Работы</h2><h2 data-en>Work</h2>
+      <p data-ru>Здесь будут реальные кейсы. Пока — плашки-заготовки: замените на скриншоты презентаций и сайтов.</p>
+      <p data-en>Real cases go here. For now — placeholders to be replaced with deck and website screenshots.</p>
+    </div>
+    <div class="works">
+
+      <!-- Презентация (большой кейс) -->
+      <article class="work web">
+        <div class="ph wide">Скриншот презентации<small>замените изображение</small></div>
+        <div class="work-body">
+          <span class="tag" data-ru>Презентация · Питч-дек</span><span class="tag" data-en>Presentation · Pitch deck</span>
+          <h3 data-ru>Название проекта</h3><h3 data-en>Project name</h3>
+          <p data-ru>Короткое описание: для кого делали, какая задача, что получилось. Структура, сторителлинг, дизайн слайдов.</p>
+          <p data-en>Short description: who it was for, the task, the result. Structure, storytelling, slide design.</p>
+        </div>
+      </article>
+
+      <!-- Сайт -->
+      <article class="work">
+        <div class="ph" style="height:300px">Скриншот сайта<small>замените изображение</small></div>
+        <div class="work-body">
+          <span class="tag" data-ru>Сайт · Лендинг</span><span class="tag" data-en>Website · Landing</span>
+          <h3 data-ru>Название проекта</h3><h3 data-en>Project name</h3>
+          <p data-ru>Структура, дизайн и сборка на Tilda. Адаптив под телефон, блоки под заявки.</p>
+          <p data-en>Structure, design and build on Tilda. Mobile-responsive, lead-capture blocks.</p>
+        </div>
+      </article>
+
+      <!-- Вёрстка -->
+      <article class="work">
+        <div class="ph alt" style="height:300px">Разворот / каталог<small>замените изображение</small></div>
+        <div class="work-body">
+          <span class="tag" data-ru>Вёрстка · Полиграфия</span><span class="tag" data-en>Layout · Print</span>
+          <h3 data-ru>Название проекта</h3><h3 data-en>Project name</h3>
+          <p data-ru>Вёрстка каталога / методички: сетка, типографика, подготовка к печати.</p>
+          <p data-en>Catalogue / workbook layout: grid, typography, print-ready prep.</p>
+        </div>
+      </article>
+
+      <!-- Галерея слайдов -->
+      <article class="work web">
+        <div class="gallery">
+          <div class="ph">Слайд 1</div>
+          <div class="ph alt">Слайд 2</div>
+          <div class="ph">Слайд 3</div>
+          <div class="ph alt">Слайд 4</div>
+          <div class="ph">Слайд 5</div>
+        </div>
+        <div class="work-body">
+          <span class="tag" data-ru>Презентация · Серия слайдов</span><span class="tag" data-en>Presentation · Slide series</span>
+          <h3 data-ru>Корпоративная презентация</h3><h3 data-en>Corporate deck</h3>
+          <p data-ru>Серия слайдов в едином стиле: обложка, цифры, схемы, кейсы. Замените на реальные развороты.</p>
+          <p data-en>A series of slides in one style: cover, numbers, diagrams, cases. Replace with real spreads.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-ru>Процесс</div><div class="eyebrow" data-en>Process</div>
+      <h2 data-ru>Как мы работаем</h2><h2 data-en>How we work</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3 data-ru>Бриф</h3><h3 data-en>Brief</h3><p data-ru>Разбираемся в задаче, аудитории и цели. Согласуем смету и сроки.</p><p data-en>We unpack the task, audience and goal. Agree scope and timeline.</p></div>
+      <div class="step"><div class="n">2</div><h3 data-ru>Сценарий</h3><h3 data-en>Script</h3><p data-ru>Структура и логика — сценарий презентации или карта сайта до отрисовки.</p><p data-en>Structure and logic — a deck script or sitemap before visuals.</p></div>
+      <div class="step"><div class="n">3</div><h3 data-ru>Дизайн</h3><h3 data-en>Design</h3><p data-ru>Визуальное решение под бренд, правки, финальная сборка.</p><p data-en>On-brand visual design, revisions, final build.</p></div>
+      <div class="step"><div class="n">4</div><h3 data-ru>Сдача</h3><h3 data-en>Handover</h3><p data-ru>Готовые файлы, исходники и инструкция, как обновлять самим.</p><p data-en>Final files, source and a how-to-update guide.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- THEATRE (личное — вместо «Живописи» в оригинале) -->
+<section id="theatre" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-ru>Откуда метод</div><div class="eyebrow" data-en>Where the method comes from</div>
+      <h2 data-ru>Театр — основа подхода</h2><h2 data-en>Theatre — the core of the approach</h2>
+      <p data-ru>Я театральный режиссёр-педагог: ставлю с детьми развивающие спектакли. Сцена научила главному в дизайне — чувству истории, ритма и композиции, умению удержать внимание и провести зрителя от завязки к финалу. Тот же режиссёрский метод я переношу в презентации и сайты.</p>
+      <p data-en>I'm a theatre director and educator — I stage developmental plays with children. The stage taught me the essentials of design: a sense of story, rhythm and composition, holding attention and leading the viewer from opening to finale. I bring that same directing method into decks and websites.</p>
+    </div>
+    <div class="art-grid">
+      <figure>
+        <div class="ph tall">Спектакль<small>фото со сцены</small></div>
+        <figcaption data-ru>Детская постановка, 20—</figcaption><figcaption data-en>Children's production, 20—</figcaption>
+      </figure>
+      <figure>
+        <div class="ph tall alt">Репетиция<small>фото</small></div>
+        <figcaption data-ru>Репетиционный процесс</figcaption><figcaption data-en>Rehearsal process</figcaption>
+      </figure>
+      <figure>
+        <div class="ph tall">Сцена<small>фото</small></div>
+        <figcaption data-ru>Развивающая постановка</figcaption><figcaption data-en>Developmental staging</figcaption>
+      </figure>
+    </div>
+    <p class="art-cv" data-ru><b>Театральный режиссёр-педагог.</b> Развивающие театральные постановки для детей: сценарий, режиссура, работа с группой, оформление сцены. Театр как инструмент развития — речь, воображение, уверенность, умение работать в команде.<br><span style="opacity:.7">Сюда добавим конкретику: студии/площадки, спектакли, годы, ссылки.</span></p>
+    <p class="art-cv" data-en><b>Theatre director and educator.</b> Developmental theatre for children: script, direction, group work, stage design. Theatre as a tool for growth — speech, imagination, confidence, teamwork.<br><span style="opacity:.7">Specifics to add: studios/venues, productions, years, links.</span></p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-single">
+    <div>
+      <div class="eyebrow" data-ru>Обо мне</div><div class="eyebrow" data-en>About</div>
+      <h2 data-ru>Татьяна Войт</h2><h2 data-en>Tatyana Voyt</h2>
+      <p data-ru>Дизайнер-сторителлер из Москвы: презентации, сайты и вёрстка — и театральный режиссёр-педагог. Совмещаю два ремесла на одной основе — умении выстроить историю и провести по ней зрителя. Поэтому форма у меня всегда работает на смысл.</p>
+      <p data-en>Designer and storyteller based in Moscow: presentations, websites and layout — and a theatre director and educator. I combine two crafts on one foundation: building a story and leading the viewer through it. So form always works for meaning.</p>
+      <p data-ru>Образование: <b>Британская высшая школа дизайна (Британка)</b>, <b>Bang Bang Education</b>; дизайну презентаций училась в <b>Bonnie&amp;Slide</b>. Работаю аккуратно, по срокам и в диалоге.</p>
+      <p data-en>Education: <b>British Higher School of Art and Design (BHSAD)</b>, <b>Bang Bang Education</b>; studied presentation design at <b>Bonnie&amp;Slide</b>. I work tidily, on schedule, in dialogue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div class="eyebrow" style="color:#e0a596" data-ru>Контакты</div>
+      <div class="eyebrow" style="color:#e0a596" data-en>Contact</div>
+      <h2 data-ru>Расскажите о проекте</h2><h2 data-en>Tell me about your project</h2>
+      <p data-ru>Презентация, сайт или вёрстка — напишите, обсудим задачу и сроки. Отвечаю быстро.</p>
+      <p data-en>A deck, a website or a layout — message me and we'll discuss scope and timing. Quick to reply.</p>
+      <div class="contact-row">
+        <!-- TODO: заменить на реальные контакты Татьяны -->
+        <a href="https://wa.me/70000000000">WhatsApp</a>
+        <a href="https://t.me/username">Telegram</a>
+        <a href="tel:+70000000000">+7 000 000-00-00</a>
+        <a href="mailto:email@example.com">email@example.com</a>
+        <a href="https://profi.ru/" target="_blank" rel="noopener">Profi.ru</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="yr"></span> Татьяна Войт · Москва</div>
+</footer>
+
+<script>
+  function setLang(l){
+    document.body.classList.toggle('en', l==='en');
+    document.documentElement.lang=l;
+    document.getElementById('b-ru').classList.toggle('on', l==='ru');
+    document.getElementById('b-en').classList.toggle('on', l==='en');
+  }
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  document.querySelectorAll('#links a').forEach(a=>a.addEventListener('click',()=>document.getElementById('links').classList.remove('open')));
+</script>
+</body>
+</html>
