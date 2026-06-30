@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Татьяна Войт — дизайнер-сторителлер: презентации, сайты, вёрстка</title>
-<meta name="description" content="Татьяна Войт — дизайн презентаций, сайтов и вёрстка с акцентом на смысл и сторителлинг. Театральный режиссёр. Британка, Bang Bang Education, Bonnie&Slide. Москва.">
+<meta name="description" content="Татьяна Войт — дизайн презентаций, сайтов и вёрстка на уровне смыслов и систем. Сторителлинг, структура, результат. Британка, Bang Bang Education, Bonnie&Slide. Москва.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -61,7 +61,7 @@
 
   .hero-collage{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .hero-collage::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--accent);border-radius:16px;z-index:0}
-  .hero-collage .ph{position:relative;z-index:1;border-radius:12px;box-shadow:0 14px 34px rgba(28,36,64,.14)}
+  .hero-collage img{position:relative;z-index:1;width:100%;border-radius:12px;object-fit:cover;box-shadow:0 14px 34px rgba(28,36,64,.14)}
   .hero-collage .wide{grid-column:1 / -1;height:190px}
   .hero-collage .sq{height:152px}
   .hero-collage .cap{position:relative;z-index:1;grid-column:1/-1;font-size:12px;letter-spacing:.5px;color:var(--ink-soft);text-align:right;margin-top:-2px}
@@ -81,7 +81,7 @@
   .sec-head h2{font-size:clamp(34px,5vw,52px)}
   .sec-head p{margin-top:14px;font-size:18px;color:var(--ink-soft)}
 
-  /* SERVICES */
+  /* SERVICES / CARDS */
   .services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
   .card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
   .card .num{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--accent)}
@@ -94,31 +94,22 @@
   .works{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
   .work{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
   .work.web{grid-column:1 / -1}
+  .work .thumb{background:var(--bg2);overflow:hidden}
+  .work .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .work:hover .thumb img{transform:scale(1.03)}
   .work-body{padding:22px 24px}
   .tag{display:inline-block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
   .work-body h3{font-size:26px}
   .work-body p{font-size:14px;color:var(--ink-soft);margin-top:8px}
+  .shot{display:block}
+  .shot img{width:100%;display:block}
+  .work-link{display:inline-block;margin-top:14px;font-size:14px;font-weight:500;color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
+  .work-link:hover{border-color:var(--accent)}
 
-  /* PLACEHOLDERS — заменить на реальные изображения */
-  .ph{width:100%;display:flex;align-items:center;justify-content:center;
-      color:#fff;text-align:center;font-size:13px;letter-spacing:.5px;padding:18px;
-      background:linear-gradient(135deg,#2b3358 0%,#46506e 60%,#b0402a 140%)}
-  .ph.alt{background:linear-gradient(135deg,#7a2b1c 0%,#b0402a 55%,#46506e 150%)}
-  .ph.tall{aspect-ratio:4/5}
-  .ph.wide{height:300px}
-  .ph small{display:block;opacity:.75;margin-top:6px;font-size:11px;text-transform:uppercase;letter-spacing:2px}
-
-  /* PRODUCT GALLERY strip */
+  /* GALLERY strip */
   .gallery{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--ink)}
-  .gallery .ph{height:300px}
-
-  /* THEATRE grid (личное) */
-  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .art-grid figure{margin:0}
-  .art-grid .ph{border-radius:10px;aspect-ratio:4/5;box-shadow:0 10px 26px rgba(28,36,64,.12)}
-  .art-grid figcaption{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-top:9px}
-  .art-cv{margin-top:30px;font-size:14.5px;line-height:1.7;color:var(--ink-soft);max-width:58em}
-  .art-cv b{color:var(--ink);font-weight:600}
+  .gallery img{width:100%;height:300px;object-fit:cover;object-position:center;transition:transform .5s}
+  .gallery img:hover{transform:scale(1.04)}
 
   /* PROCESS */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -150,7 +141,7 @@
     .services,.steps{grid-template-columns:1fr 1fr}
     .works{grid-template-columns:1fr}
     .gallery{grid-template-columns:repeat(3,1fr)}
-    .art-grid{grid-template-columns:1fr 1fr}
+    .gallery img{height:220px}
     nav.links{display:none}
     nav.links.open{display:flex;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px 28px;gap:16px;border-bottom:1px solid var(--line)}
     .menu-btn{display:block}
@@ -170,7 +161,7 @@
     <nav class="links" id="links">
       <a href="#works" data-ru>Работы</a><a href="#works" data-en>Work</a>
       <a href="#services" data-ru>Услуги</a><a href="#services" data-en>Services</a>
-      <a href="#theatre" data-ru>Театр</a><a href="#theatre" data-en>Theatre</a>
+      <a href="#approach" data-ru>Подход</a><a href="#approach" data-en>Approach</a>
       <a href="#about" data-ru>Обо мне</a><a href="#about" data-en>About</a>
       <a href="#contact" data-ru>Контакты</a><a href="#contact" data-en>Contact</a>
     </nav>
@@ -190,10 +181,10 @@
     <div>
       <div class="eyebrow" data-ru>Дизайнер-сторителлер · презентации, сайты, вёрстка</div>
       <div class="eyebrow" data-en>Designer &amp; storyteller · decks, websites, layout</div>
-      <h1 data-ru>Выстраиваю историю —<br>на слайде и на&nbsp;<em>сцене</em></h1>
-      <h1 data-en>I build the story —<br>on the slide and the&nbsp;<em>stage</em></h1>
-      <p class="lead" data-ru>Дизайнер презентаций, сайтов и вёрстки — и театральный режиссёр. У дизайна и режиссуры одна основа: выстроить смысл и провести зрителя к решению. Поэтому мои работы не просто красивы — они ведут и убеждают.</p>
-      <p class="lead" data-en>Presentation, web and layout designer — and a theatre director. Design and directing share one core: build the meaning and lead the viewer to a decision. So my work doesn't just look good — it guides and convinces.</p>
+      <h1 data-ru>Выстраиваю историю —<br>и <em>систему смыслов</em> за&nbsp;ней</h1>
+      <h1 data-en>I build the story —<br>and the <em>system of meaning</em> behind it</h1>
+      <p class="lead" data-ru>Дизайнер презентаций, сайтов и вёрстки. Работаю не на уровне «красивых слайдов», а на уровне смысла и структуры: собираю историю и систему, которые ведут зрителя к решению — заявке, инвестиции, действию.</p>
+      <p class="lead" data-en>Presentation, web and layout designer. I work not at the level of "pretty slides" but at the level of meaning and structure: assembling a story and a system that lead the viewer to a decision — a lead, an investment, an action.</p>
       <div class="btns">
         <a class="btn btn-primary" href="#works" data-ru>Смотреть работы</a>
         <a class="btn btn-primary" href="#works" data-en>View work</a>
@@ -202,10 +193,10 @@
       </div>
     </div>
     <div class="hero-collage">
-      <div class="ph wide">Презентация / сайт<small>замените фото</small></div>
-      <div class="ph sq alt">Сцена<small>фото</small></div>
-      <div class="ph sq">Разворот<small>фото</small></div>
-      <div class="cap" data-ru>презентации · сайты · театр</div><div class="cap" data-en>decks · web · theatre</div>
+      <img class="wide" src="assets/prvz_showcase.jpg" alt="Сайт-витрина">
+      <img class="sq" src="assets/case_coach.jpg" alt="Сайт-многостраничник">
+      <img class="sq" src="assets/case_ai4g.jpg" alt="Сайт продукта">
+      <div class="cap" data-ru>презентации · сайты · смыслы</div><div class="cap" data-en>decks · web · meaning</div>
     </div>
   </div>
 </section>
@@ -216,8 +207,8 @@
     <blockquote data-ru>«Если звёзды зажигают — значит, это <span>кому-нибудь нужно</span>».</blockquote>
     <blockquote data-en>"If the stars are lit — it means <span>someone needs them</span>."</blockquote>
     <div class="src" data-ru>Владимир Маяковский</div><div class="src" data-en>Vladimir Mayakovsky</div>
-    <p data-ru>Так и со слайдом, и со страницей: каждый элемент должен быть кому-то нужен — отвечать на вопрос зрителя «зачем это мне». Я начинаю не с украшения, а со смысла: что человек должен понять, почувствовать и сделать. Дизайн и театр для меня про одно — зажечь нужную мысль в нужный момент и превратить её в действие: заявку, инвестицию, решение.</p>
-    <p data-en>It's the same with a slide or a page: every element must be needed — it must answer the viewer's "what's in it for me". I start not with decoration but with meaning: what a person should understand, feel and do. Design and theatre are about one thing — lighting the right thought at the right moment and turning it into action: a lead, an investment, a decision.</p>
+    <p data-ru>Так и со слайдом, и со страницей: каждый элемент должен быть кому-то нужен — отвечать на вопрос «зачем это мне». Я начинаю не с украшения, а со смысла: что человек должен понять, почувствовать и сделать. Дизайн и сторителлинг для меня про одно — собрать смысл в систему и превратить его в действие: заявку, инвестицию, решение.</p>
+    <p data-en>It's the same with a slide or a page: every element must be needed — it must answer "what's in it for me". I start not with decoration but with meaning: what a person should understand, feel and do. Design and storytelling are about one thing — assembling meaning into a system and turning it into action: a lead, an investment, a decision.</p>
   </div>
 </section>
 
@@ -278,58 +269,84 @@
     <div class="sec-head">
       <div class="eyebrow" data-ru>Избранное</div><div class="eyebrow" data-en>Selected work</div>
       <h2 data-ru>Работы</h2><h2 data-en>Work</h2>
-      <p data-ru>Здесь будут реальные кейсы. Пока — плашки-заготовки: заменим на скриншоты презентаций и сайтов.</p>
-      <p data-en>Real cases go here. For now — placeholders to be replaced with deck and website screenshots.</p>
     </div>
     <div class="works">
 
       <article class="work web">
-        <div class="ph wide">Скриншот презентации<small>замените изображение</small></div>
+        <a class="shot" href="https://prvz-jewelry.ru/" target="_blank" rel="noopener">
+          <img src="assets/prvz_showcase.jpg" alt="Сайт PRVZ — десктоп и мобильная версия">
+        </a>
         <div class="work-body">
-          <span class="tag" data-ru>Презентация · Питч-дек</span><span class="tag" data-en>Presentation · Pitch deck</span>
-          <h3 data-ru>Название проекта</h3><h3 data-en>Project name</h3>
-          <p data-ru>Короткое описание: для кого делали, какая задача, что получилось. Структура, сторителлинг, дизайн слайдов.</p>
-          <p data-en>Short description: who it was for, the task, the result. Structure, storytelling, slide design.</p>
+          <span class="tag" data-ru>Сайт · Интернет-магазин</span><span class="tag" data-en>Website · E-commerce</span>
+          <h3>PRVZ Jewelry</h3>
+          <p data-ru>Интернет-магазин украшений ручной работы: каталог, карточки товаров, раздел о бренде. Структура, дизайн, сборка и публикация с адаптивом под телефон.</p>
+          <p data-en>Online store for handmade jewellery: catalogue, product pages, brand story. Structure, design, build and launch — fully mobile-responsive.</p>
+          <a class="work-link" href="https://prvz-jewelry.ru/" target="_blank" rel="noopener" data-ru>Открыть сайт →</a><a class="work-link" href="https://prvz-jewelry.ru/" target="_blank" rel="noopener" data-en>Visit the site →</a>
         </div>
       </article>
 
       <article class="work">
-        <div class="ph" style="height:300px">Скриншот сайта<small>замените изображение</small></div>
+        <a class="shot" href="https://coachsemenova.com" target="_blank" rel="noopener"><div class="thumb"><img src="assets/case_coach.jpg" alt="Сайт Елены Семёновой" style="height:300px;object-fit:cover"></div></a>
         <div class="work-body">
-          <span class="tag" data-ru>Сайт · Лендинг</span><span class="tag" data-en>Website · Landing</span>
-          <h3 data-ru>Название проекта</h3><h3 data-en>Project name</h3>
-          <p data-ru>Структура, дизайн и сборка на Tilda. Адаптив под телефон, блоки под заявки.</p>
-          <p data-en>Structure, design and build on Tilda. Mobile-responsive, lead-capture blocks.</p>
+          <span class="tag" data-ru>Сайт · Многостраничник</span><span class="tag" data-en>Website · Multi-page</span>
+          <h3 data-ru>Елена Семёнова — коуч</h3><h3 data-en>Elena Semenova — coach</h3>
+          <p data-ru>Сайт для executive- и командного коуча: структура, дизайн и сборка на Tilda. Опыт, услуги, события и заявки — в одном многостраничнике.</p>
+          <p data-en>Website for an executive and team coach: structure, design and build on Tilda — services, events and lead capture in one multi-page site.</p>
+          <a class="work-link" href="https://coachsemenova.com" target="_blank" rel="noopener" data-ru>Открыть сайт →</a><a class="work-link" href="https://coachsemenova.com" target="_blank" rel="noopener" data-en>Visit the site →</a>
         </div>
       </article>
 
       <article class="work">
-        <div class="ph alt" style="height:300px">Разворот / каталог<small>замените изображение</small></div>
+        <a class="shot" href="https://rsc-service-lodochnaya.ru/" target="_blank" rel="noopener"><div class="thumb"><img src="assets/case_rsc.jpg" alt="Сайт РСК Сервис" style="height:300px;object-fit:cover"></div></a>
         <div class="work-body">
-          <span class="tag" data-ru>Вёрстка · Полиграфия</span><span class="tag" data-en>Layout · Print</span>
-          <h3 data-ru>Название проекта</h3><h3 data-en>Project name</h3>
-          <p data-ru>Вёрстка каталога / методички: сетка, типографика, подготовка к печати.</p>
-          <p data-en>Catalogue / workbook layout: grid, typography, print-ready prep.</p>
+          <span class="tag" data-ru>Сайт · Доработка и поддержка</span><span class="tag" data-en>Website · Refinement</span>
+          <h3 data-ru>РСК Сервис</h3><h3 data-en>RSC Service</h3>
+          <p data-ru>Кузовной ремонт премиум-класса. Доработка и развитие сайта: правки структуры и дизайна, блоки под конверсию — заявки через WhatsApp, кейсы «до / после».</p>
+          <p data-en>Premium body shop. Ongoing site refinement: structure and design edits, conversion blocks — WhatsApp leads and before/after cases.</p>
+          <a class="work-link" href="https://rsc-service-lodochnaya.ru/" target="_blank" rel="noopener" data-ru>Открыть сайт →</a><a class="work-link" href="https://rsc-service-lodochnaya.ru/" target="_blank" rel="noopener" data-en>Visit the site →</a>
+        </div>
+      </article>
+
+      <article class="work">
+        <a class="shot" href="https://ai4g.ru/" target="_blank" rel="noopener"><div class="thumb"><img src="assets/case_ai4g.jpg" alt="Сайт сервиса Ai4G" style="height:300px;object-fit:cover"></div></a>
+        <div class="work-body">
+          <span class="tag" data-ru>Сайт · Продукт</span><span class="tag" data-en>Website · Product</span>
+          <h3 data-ru>Ai4G — сервис развития</h3><h3 data-en>Ai4G — growth service</h3>
+          <p data-ru>Сайт сервиса для построения траектории развития: диагностика, продуктовая линейка, наставничество. Структура, дизайн и сборка многостраничника на Tilda.</p>
+          <p data-en>Website for a personal-growth service: diagnostics, product line, mentoring. Structure, design and multi-page build on Tilda.</p>
+          <a class="work-link" href="https://ai4g.ru/" target="_blank" rel="noopener" data-ru>Открыть сайт →</a><a class="work-link" href="https://ai4g.ru/" target="_blank" rel="noopener" data-en>Visit the site →</a>
         </div>
       </article>
 
       <article class="work web">
         <div class="gallery">
-          <div class="ph">Слайд 1</div>
-          <div class="ph alt">Слайд 2</div>
-          <div class="ph">Слайд 3</div>
-          <div class="ph alt">Слайд 4</div>
-          <div class="ph">Слайд 5</div>
+          <img src="assets/prvz_sash1.jpg" alt="Каталог — разворот">
+          <img src="assets/prvz_brooch1.jpg" alt="Каталог — предметная съёмка">
+          <img src="assets/prvz_brooch3.jpg" alt="Каталог — предметная съёмка">
+          <img src="assets/prvz_brooch4.jpg" alt="Каталог — разворот">
+          <img src="assets/prvz_sash2.jpg" alt="Каталог — разворот">
         </div>
         <div class="work-body">
-          <span class="tag" data-ru>Презентация · Серия слайдов</span><span class="tag" data-en>Presentation · Slide series</span>
-          <h3 data-ru>Корпоративная презентация</h3><h3 data-en>Corporate deck</h3>
-          <p data-ru>Серия слайдов в едином стиле: обложка, цифры, схемы, кейсы. Заменим на реальные развороты.</p>
-          <p data-en>A series of slides in one style: cover, numbers, diagrams, cases. Replace with real spreads.</p>
+          <span class="tag" data-ru>Каталог · Вёрстка · Арт-дирекшн</span><span class="tag" data-en>Catalogue · Layout · Art direction</span>
+          <h3 data-ru>«Очерчивая воздух» — каталог выставки</h3><h3 data-en>"Outlining the Air" — exhibition catalogue</h3>
+          <p data-ru>Каталог выставочного проекта (Sample Design Fair 2024): концепция, арт-дирекшн, предметная съёмка и вёрстка — материал собран в цельную визуальную историю.</p>
+          <p data-en>Catalogue for an exhibition project (Sample Design Fair 2024): concept, art direction, product photography and layout — assembled into one coherent visual story.</p>
+        </div>
+      </article>
+
+      <article class="work">
+        <div class="thumb"><img src="assets/prvz_logo.jpg" alt="PRVZ айдентика" style="height:300px;object-fit:cover"></div>
+        <div class="work-body">
+          <span class="tag" data-ru>Фирменный стиль</span><span class="tag" data-en>Brand identity</span>
+          <h3 data-ru>PRVZ — айдентика</h3><h3 data-en>PRVZ — identity</h3>
+          <p data-ru>Логотип и фирменный стиль бренда: шрифтовое решение, чёрно-белый и цветной знак, единая система носителей.</p>
+          <p data-en>Logo and identity for a brand: type-driven mark in monochrome and colour, a consistent system of collateral.</p>
         </div>
       </article>
 
     </div>
+    <p class="muted" style="margin-top:22px;font-size:13.5px;opacity:.75" data-ru>В разделе показаны проекты из общего портфолио студии — заменим на личные кейсы Татьяны по мере готовности.</p>
+    <p class="muted" style="margin-top:22px;font-size:13.5px;opacity:.75" data-en>This section shows projects from the studio's shared portfolio — to be replaced with Tatyana's own cases over time.</p>
   </div>
 </section>
 
@@ -349,31 +366,35 @@
   </div>
 </section>
 
-<!-- THEATRE (личное — вместо «Живописи» в оригинале) -->
-<section id="theatre" style="background:var(--bg2)">
+<!-- APPROACH (бизнес-ключ, вместо «театра») -->
+<section id="approach" style="background:var(--bg2)">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow" data-ru>Откуда метод</div><div class="eyebrow" data-en>Where the method comes from</div>
-      <h2 data-ru>Театр — основа подхода</h2><h2 data-en>Theatre — the core of the approach</h2>
-      <p data-ru>Я театральный режиссёр: ставлю с детьми развивающие спектакли. Сцена научила главному в дизайне — держать внимание, чувствовать ритм и композицию, вести зрителя от завязки к финалу. Тот же режиссёрский метод я переношу в презентации и сайты.</p>
-      <p data-en>I'm a theatre director — I stage developmental plays with children. The stage taught me the essentials of design: holding attention, sensing rhythm and composition, leading the viewer from opening to finale. I bring that same directing method into decks and websites.</p>
+      <div class="eyebrow" data-ru>Подход</div><div class="eyebrow" data-en>Approach</div>
+      <h2 data-ru>Дизайн на уровне смыслов</h2><h2 data-en>Design at the level of meaning</h2>
+      <p data-ru>Я работаю не с «картинками», а с системой смыслов: что нужно донести, в каком порядке и к какому действию привести. Сторителлинг и структура — раньше визуала; форма всегда служит содержанию и бизнес-задаче.</p>
+      <p data-en>I work not with "pictures" but with a system of meaning: what to convey, in what order and toward which action. Storytelling and structure come before visuals; form always serves content and the business goal.</p>
     </div>
-    <div class="art-grid">
-      <figure>
-        <div class="ph tall">Спектакль<small>фото со сцены</small></div>
-        <figcaption data-ru>Детская постановка</figcaption><figcaption data-en>Children's production</figcaption>
-      </figure>
-      <figure>
-        <div class="ph tall alt">Репетиция<small>фото</small></div>
-        <figcaption data-ru>Репетиционный процесс</figcaption><figcaption data-en>Rehearsal process</figcaption>
-      </figure>
-      <figure>
-        <div class="ph tall">Сцена<small>фото</small></div>
-        <figcaption data-ru>Развивающая постановка</figcaption><figcaption data-en>Developmental staging</figcaption>
-      </figure>
+    <div class="services">
+      <div class="card">
+        <div class="num">01</div>
+        <h3 data-ru>Смысл прежде формы</h3><h3 data-en>Meaning before form</h3>
+        <p data-ru>Начинаю с вопросов «зачем» и «что должен сделать зритель» — и только потом проектирую визуал.</p>
+        <p data-en>I start with "why" and "what should the viewer do" — and only then design the visuals.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3 data-ru>Сторителлинг</h3><h3 data-en>Storytelling</h3>
+        <p data-ru>Собираю материал в историю: завязка, аргументы, кульминация, призыв к действию. Так удерживается внимание и растёт убедительность.</p>
+        <p data-en>I assemble material into a story: setup, arguments, climax, call to action. That's how attention holds and persuasion grows.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3 data-ru>Системность</h3><h3 data-en>System thinking</h3>
+        <p data-ru>Единая логика, сетка и иерархия смыслов: проект работает как система, а не набор слайдов. Его легко развивать и масштабировать.</p>
+        <p data-en>One logic, grid and hierarchy of meaning: the project works as a system, not a pile of slides. Easy to extend and scale.</p>
+      </div>
     </div>
-    <p class="art-cv" data-ru><b>Театральный режиссёр.</b> Развивающие театральные постановки для детей: сценарий, режиссура, работа с группой, оформление сцены. Театр как инструмент развития — речь, воображение, уверенность, умение работать в команде.<br><span style="opacity:.7">Сюда добавим конкретику: студии/площадки, спектакли, годы.</span></p>
-    <p class="art-cv" data-en><b>Theatre director.</b> Developmental theatre for children: script, direction, group work, stage design. Theatre as a tool for growth — speech, imagination, confidence, teamwork.<br><span style="opacity:.7">Specifics to add: studios/venues, productions, years.</span></p>
   </div>
 </section>
 
@@ -383,8 +404,8 @@
     <div>
       <div class="eyebrow" data-ru>Обо мне</div><div class="eyebrow" data-en>About</div>
       <h2 data-ru>Татьяна Войт</h2><h2 data-en>Tatyana Voyt</h2>
-      <p data-ru>Дизайнер-сторителлер из Москвы: презентации, сайты и вёрстка — и театральный режиссёр. Совмещаю два ремесла на одной основе: умении выстроить смысл и провести по нему зрителя. Поэтому форма у меня всегда работает на содержание.</p>
-      <p data-en>Designer and storyteller based in Moscow: presentations, websites and layout — and a theatre director. I combine two crafts on one foundation: building meaning and leading the viewer through it. So form always works for content.</p>
+      <p data-ru>Дизайнер-сторителлер из Москвы: презентации, сайты и вёрстка. Работаю на уровне смыслов и систем — выстраиваю историю, структуру и логику, в которых форма всегда служит содержанию и бизнес-результату.</p>
+      <p data-en>Designer and storyteller based in Moscow: presentations, websites and layout. I work at the level of meaning and systems — building story, structure and logic where form always serves content and the business result.</p>
       <p data-ru>Образование: <b>Британская высшая школа дизайна (Британка)</b>, <b>Bang Bang Education</b>; дизайну презентаций училась в <b>Bonnie&amp;Slide</b>. Работаю аккуратно, по срокам и в диалоге.</p>
       <p data-en>Education: <b>British Higher School of Art and Design (BHSAD)</b>, <b>Bang Bang Education</b>; studied presentation design at <b>Bonnie&amp;Slide</b>. I work tidily, on schedule, in dialogue.</p>
     </div>
