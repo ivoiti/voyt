@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Чек-лист — быстрый анализ карты</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .wrap{display:flex;height:100%;gap:46px;align-items:center}
+  .left{flex:1.25}
+  .steps{display:flex;flex-direction:column;gap:13px;margin-top:6px}
+  .step{display:flex;align-items:flex-start;gap:16px;background:rgba(255,255,255,.5);
+    border:1px solid rgba(169,131,47,.4);border-radius:14px;padding:16px 20px}
+  .step .n{width:44px;height:44px;flex:none;border-radius:50%;background:var(--gold);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:24px}
+  .step h3{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:22px;font-weight:600;line-height:1.05}
+  .step p{font-size:15.5px;color:var(--body);line-height:1.4;margin-top:3px}
+  .step p i{color:var(--water);font-style:italic}
+  .right{flex:.75;display:flex;flex-direction:column;align-items:center;gap:14px}
+  .cardbox{width:262px;height:452px;border:5px solid var(--gold);border-radius:10px;overflow:hidden;
+    background:#fff;box-shadow:0 20px 44px rgba(31,51,80,.32)}
+  .cardbox img{width:100%;height:100%;object-fit:cover;display:block}
+  .right .cap{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--sub);font-size:18px}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">раздатка · чек-лист</div>
+      <h1 class="title">Быстрый анализ карты</h1>
+      <div class="lead">Простой алгоритм для новичков — 5 шагов к смыслу любой карты</div>
+    </div>
+    <div class="rule"></div>
+
+    <div class="wrap">
+      <div class="left">
+        <div class="steps">
+          <div class="step"><div class="n">1</div><div><h3>Название</h3><p>Что оно само подсказывает? <i>«Звезда» — надежда, обновление.</i></p></div></div>
+          <div class="step"><div class="n">2</div><div><h3>Номер</h3><p>Чётный или нечётный, высокий или низкий — это задаёт оттенок.</p></div></div>
+          <div class="step"><div class="n">3</div><div><h3>Символы</h3><p>Люди, предметы, цвета, жесты — что изображено на карте.</p></div></div>
+          <div class="step"><div class="n">4</div><div><h3>Эмоция</h3><p>Какие чувства вызывает карта при первом взгляде?</p></div></div>
+          <div class="step"><div class="n">5</div><div><h3>Контекст</h3><p>Как всё это связано с вашим вопросом и ситуацией.</p></div></div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="cardbox"><img src="../cards/major_star.jpg" alt="Пример карты"></div>
+        <div class="cap">пример: разберите по шагам</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

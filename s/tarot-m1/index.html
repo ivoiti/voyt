@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Таро · Модуль 1 — предварительный дизайн</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Marck+Script&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0a1526;min-height:100vh;padding:30px 18px 60px;font-family:'PT Serif',Georgia,serif;color:#cfe0f1}
+  .deck{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+  .deckhead{text-align:center;margin-bottom:2px}
+  .deckhead h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;color:#eaf2fb}
+  .deckhead p{font-size:13px;color:#8fa6c2;margin-top:6px}
+  .snum{font-size:12px;color:#7f93b0;margin:6px 2px -8px;letter-spacing:.5px}
+
+  .slide{position:relative;width:100%;aspect-ratio:16/9;container-type:inline-size;border-radius:10px;overflow:hidden;
+    --gold:#a9832f;--ink:#1f3350;--body:#3c4d68;--sub:#365a86;--frame:rgba(150,120,50,.5);
+    background:radial-gradient(125% 135% at 80% 10%, #f2f7fd 0%, #d8e6f5 38%, #bfd5ee 70%, #a8c6e4 100%);
+    box-shadow:0 18px 50px rgba(0,0,0,.4), inset 0 0 9cqw rgba(35,65,115,.14)}
+  .frame{position:absolute;inset:2.2cqw;border:1px solid var(--frame);border-radius:6px;pointer-events:none}
+  .corner{position:absolute;width:3cqw;height:3cqw;color:var(--gold)}
+  .corner.tl{top:1.1cqw;left:1.1cqw}.corner.tr{top:1.1cqw;right:1.1cqw;transform:scaleX(-1)}
+  .corner.bl{bottom:1.1cqw;left:1.1cqw;transform:scaleY(-1)}.corner.br{bottom:1.1cqw;right:1.1cqw;transform:scale(-1)}
+  .pad{position:absolute;inset:0;padding:5cqw 6.5cqw;display:flex;flex-direction:column;justify-content:center}
+  .module{font-family:'Marck Script',cursive;font-size:3cqw;color:var(--gold);line-height:1}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--ink);font-size:4.4cqw;line-height:1.08;margin:.3cqw 0 .4cqw}
+  .sub{font-style:italic;color:var(--sub);font-size:2.4cqw;font-family:'Cormorant Garamond',serif}
+  .div{display:flex;align-items:center;gap:.9cqw;margin:1.4cqw 0;color:var(--gold)}
+  .div .line{height:1px;width:7cqw;background:linear-gradient(90deg,var(--gold),transparent)}
+  p{color:var(--body);font-size:1.7cqw;line-height:1.4}
+  .center{align-items:center;text-align:center}
+  .gold{color:var(--gold)}
+  img{display:block}
+  .card{border-radius:.9cqw;border:1.6px solid rgba(169,131,47,.8);box-shadow:0 1.1cqw 2.6cqw rgba(28,42,68,.34), 0 0 2.2cqw rgba(110,150,205,.3)}
+  .tag{position:absolute;left:6.5cqw;bottom:2.3cqw;font-size:1.1cqw;color:var(--gold);opacity:.6}
+
+  /* utility grids */
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
+  .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw}
+  .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6cqw}
+  .panel{background:rgba(255,255,255,.45);border:1px solid rgba(150,120,50,.35);border-radius:1cqw;padding:2cqw}
+  .panel h3{font-family:'Cormorant Garamond',serif;font-size:2.4cqw;color:var(--ink);margin-bottom:.6cqw}
+  .panel p{font-size:1.5cqw}
+  .ico{font-size:2.6cqw;line-height:1}
+  .lead{font-size:2cqw;color:var(--ink);font-family:'Cormorant Garamond',serif;font-weight:600}
+  .opt{display:block;border:1px solid rgba(150,120,50,.4);border-radius:6cqw;padding:1cqw 2cqw;margin-top:1cqw;font-size:1.6cqw;color:var(--body);background:rgba(255,255,255,.4)}
+  .opt.ok{border-color:var(--gold);background:rgba(169,131,47,.12);color:var(--ink)}
+  table{width:100%;border-collapse:collapse;margin-top:1.4cqw;font-size:1.5cqw}
+  th,td{border:1px solid rgba(150,120,50,.35);padding:1cqw 1.2cqw;text-align:left;color:var(--body)}
+  th{font-family:'Cormorant Garamond',serif;font-size:1.8cqw;color:var(--ink);background:rgba(255,255,255,.4)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><symbol id="cn" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="1.1"><path d="M2 14 Q2 2 14 2"/><path d="M7 18 Q7 7 18 7"/></g><circle cx="3" cy="3" r="1.3" fill="currentColor"/></symbol></svg>
+
+<div class="deck">
+  <div class="deckhead">
+    <h2>Таро · Модуль 1 — предварительный дизайн</h2>
+    <p>«Введение в Таро: история и основы» · 11 слайдов · светло-голубой · черновик раскладки и стиля · дизайн Янита Войт</p>
+  </div>
+
+  <div class="snum">Слайд 1 · Титульный</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad center" style="padding:3.4cqw 6cqw">
+      <div class="module" style="font-size:2.6cqw">Модуль 1 · Введение в Таро</div>
+      <h1 style="font-size:3.7cqw;max-width:32cqw;margin:.2cqw 0 .2cqw">Таро: магия символов<br>или инструмент самопознания?</h1>
+      <div style="display:flex;justify-content:center;margin:1.6cqw 0 1.2cqw">
+        <img class="card" src="../tarot/c_fool.jpg" style="width:12cqw;transform:rotate(-12deg);margin:0 -1.6cqw">
+        <img class="card" src="../tarot/c_lovers.jpg" style="width:12cqw;transform:rotate(-4deg);margin-top:-1cqw;z-index:2">
+        <img class="card" src="../tarot/c_hermit.jpg" style="width:12cqw;transform:rotate(4deg);margin-top:-1cqw;z-index:2">
+        <img class="card" src="../tarot/c_world.jpg" style="width:12cqw;transform:rotate(12deg);margin:0 -1.6cqw">
+      </div>
+      <p class="lead" style="font-size:1.9cqw">Откройте язык архетипов и научитесь читать символы</p>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 2 · Миф vs Реальность</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad">
+      <div class="module">Миф vs Реальность</div><h1>Откуда на самом деле Таро?</h1><div class="div"><span class="line"></span>✦</div>
+      <div class="g2">
+        <div class="panel"><h3 class="gold">Мифы</h3>
+          <p style="margin:.8cqw 0"><span class="ico">🔺</span> «Книга Тота из Древнего Египта»</p>
+          <p style="margin:.8cqw 0"><span class="ico">🌊</span> «Знания с затонувшей Атлантиды»</p>
+          <p style="margin:.8cqw 0"><span class="ico">🔮</span> «Цыганские гадания»</p>
+        </div>
+        <div class="panel"><h3 class="gold">Факты</h3>
+          <p style="margin:.8cqw 0"><span class="ico">🏰</span> Первые колоды — Италия, XV век</p>
+          <p style="margin:.8cqw 0"><span class="ico">🃏</span> Эволюция из обычных игральных карт</p>
+          <p style="margin:.8cqw 0"><span class="ico">📜</span> Первое упоминание — 1367, Берн</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 3 · Эволюция во времени</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad">
+      <div class="module">Путешествие во времени</div><h1>Эволюция Таро · XIV–XXI вв.</h1>
+      <div style="position:relative;margin-top:5cqw;height:1px;background:var(--gold)">
+        <div class="g4" style="position:absolute;inset:-3cqw 0 0 0;gap:0">
+          <div style="text-align:center"><div style="width:1.2cqw;height:1.2cqw;border-radius:50%;background:var(--gold);margin:0 auto 1.4cqw"></div><div class="lead">1440</div><p style="margin-top:.4cqw">Висконти-Сфорца — первые расписные миниатюры</p></div>
+          <div style="text-align:center"><div style="width:1.2cqw;height:1.2cqw;border-radius:50%;background:var(--gold);margin:0 auto 1.4cqw"></div><div class="lead">1781</div><p style="margin-top:.4cqw">Кур де Жебелен — Таро как «древняя мудрость»</p></div>
+          <div style="text-align:center"><div style="width:1.2cqw;height:1.2cqw;border-radius:50%;background:var(--gold);margin:0 auto 1.4cqw"></div><div class="lead">1910</div><p style="margin-top:.4cqw">Уэйт–Смит — самая известная колода</p></div>
+          <div style="text-align:center"><div style="width:1.2cqw;height:1.2cqw;border-radius:50%;background:var(--gold);margin:0 auto 1.4cqw"></div><div class="lead">2020-е</div><p style="margin-top:.4cqw">Современные авторские колоды</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 4 · Структура колоды</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad">
+      <div class="module">Структура колоды</div><h1>78 карт — 78 ключей к себе и миру</h1><div class="div"><span class="line"></span>✦</div>
+      <div class="g3">
+        <div class="panel center"><div class="lead" style="font-size:4cqw;color:var(--gold)">22</div><h3>Старшие Арканы</h3><p>Путь души — ключевые этапы</p></div>
+        <div class="panel center"><div class="lead" style="font-size:4cqw;color:var(--gold)">56</div><h3>Младшие Арканы</h3><p>4 масти — повседневная жизнь</p></div>
+        <div class="panel center"><div class="lead" style="font-size:4cqw;color:var(--gold)">16</div><h3>Карты Двора</h3><p>Паж · Рыцарь · Королева · Король</p></div>
+      </div>
+      <p class="center" style="margin-top:1.8cqw;font-size:2.2cqw;color:var(--ink);font-family:'Cormorant Garamond',serif">22 + 56 + 16 = <span class="gold">78</span></p>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 5 · Масти и стихии</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad">
+      <div class="module">Масти и стихии</div><h1>Угадай масть по описанию</h1><div class="div"><span class="line"></span>✦</div>
+      <div class="g4">
+        <div class="panel"><div class="ico">🔥</div><h3>Жезлы</h3><p>Страсть, амбиции, новые проекты · Огонь</p></div>
+        <div class="panel"><div class="ico">💧</div><h3>Кубки</h3><p>Любовь, дружба, творчество · Вода</p></div>
+        <div class="panel"><div class="ico">🌬️</div><h3>Мечи</h3><p>Конфликты, решения, ясность · Воздух</p></div>
+        <div class="panel"><div class="ico">🪙</div><h3>Пентакли</h3><p>Деньги, здоровье, стабильность · Земля</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 6 · Карта-загадка</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad" style="flex-direction:row;gap:4cqw;align-items:center">
+      <div style="flex:1">
+        <div class="module">Загадка</div><h1>Что объединяет эти карты?</h1>
+        <div class="opt">Они все про конец чего-то</div>
+        <div class="opt">Это карты про путешествия</div>
+        <div class="opt ok">Это Старшие Арканы — ключевые этапы пути ✓</div>
+      </div>
+      <div style="display:flex;gap:-1cqw">
+        <img class="card" src="../tarot/c_fool.jpg" style="width:14cqw;transform:rotate(-10deg)">
+        <img class="card" src="../tarot/c_death.jpg" style="width:14cqw;margin:0 -1.2cqw;z-index:2">
+        <img class="card" src="../tarot/c_world.jpg" style="width:14cqw;transform:rotate(10deg)">
+      </div>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 7 · Карты Двора</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad">
+      <div class="module">Карты Двора</div><h1>Кто есть кто</h1><div class="div"><span class="line"></span>✦</div>
+      <div class="g4">
+        <div class="panel"><h3>Паж</h3><p>Курьер судьбы: новости и возможности</p></div>
+        <div class="panel"><h3>Рыцарь</h3><p>Герой действия: импульс, движение, риск</p></div>
+        <div class="panel"><h3>Королева</h3><p>Мудрая наставница: глубина, интуиция</p></div>
+        <div class="panel"><h3>Король</h3><p>Стратег: власть, структура, контроль</p></div>
+      </div>
+      <p class="center" style="margin-top:1.4cqw;font-style:italic;color:var(--sub)">«Я зажигаю огонь вдохновения!» — Король Жезлов</p>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 8 · Прямые vs перевёрнутые</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad" style="flex-direction:row;gap:4cqw;align-items:center">
+      <div style="display:flex;gap:2cqw">
+        <div class="center"><img class="card" src="../tarot/c_lovers.jpg" style="width:14cqw"><p style="margin-top:.6cqw">Прямая</p></div>
+        <div class="center"><img class="card" src="../tarot/c_lovers.jpg" style="width:14cqw;transform:rotate(180deg)"><p style="margin-top:.6cqw">Перевёрнутая</p></div>
+      </div>
+      <div style="flex:1">
+        <div class="module">Эксперимент</div><h1>Прямые vs перевёрнутые</h1>
+        <p style="margin:.8cqw 0">Прямая карта вызывает у меня чувство…</p>
+        <p style="margin:.8cqw 0">Перевёрнутая — ощущение…</p>
+        <p style="margin-top:1cqw;color:var(--sub);font-style:italic">Перевёрнутые часто показывают блоки, страхи или искажение энергии.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 9 · Выбери свою колоду</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad">
+      <div class="module">Тест</div><h1>Какая колода откликается вам?</h1><div class="div"><span class="line"></span>✦</div>
+      <div class="g3">
+        <div class="panel"><h3>Райдер–Уэйт</h3><p>Классика, детальные сюжеты · «Люблю чёткие символы»</p></div>
+        <div class="panel"><h3>Марсельское</h3><p>Геометричные образы · «Предпочитаю традиции»</p></div>
+        <div class="panel"><h3>Авторская</h3><p>Магия и фантазия · «Хочу свой стиль»</p></div>
+      </div>
+      <p class="center" style="margin-top:1.4cqw;color:var(--sub);font-style:italic">Ваша колода — отличный старт для интуитивного чтения!</p>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 10 · Практическое задание</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad">
+      <div class="module">Практика</div><h1>Дневник первой встречи</h1>
+      <p>Вытяните 3 карты Старших Арканов и заполните дневник:</p>
+      <table>
+        <tr><th>Карта</th><th>Образы</th><th>Ассоциации</th><th>Вопрос к себе</th></tr>
+        <tr><td>Карта 1</td><td>что изображено?</td><td>какие эмоции?</td><td>…</td></tr>
+        <tr><td>Карта 2</td><td>…</td><td>связь с ситуацией</td><td>…</td></tr>
+        <tr><td>Карта 3</td><td>…</td><td>какой совет даёт?</td><td>…</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="snum">Слайд 11 · Итоги + вызов</div>
+  <div class="slide"><div class="frame"></div><svg class="corner tl"><use href="#cn"/></svg><svg class="corner tr"><use href="#cn"/></svg><svg class="corner bl"><use href="#cn"/></svg><svg class="corner br"><use href="#cn"/></svg>
+    <div class="pad" style="flex-direction:row;gap:4cqw;align-items:center">
+      <div style="flex:1">
+        <div class="module">Итоги</div><h1>Что вы узнали</h1>
+        <p style="margin:.5cqw 0">✦ Развенчали мифы о Таро</p>
+        <p style="margin:.5cqw 0">✦ Изучили структуру колоды</p>
+        <p style="margin:.5cqw 0">✦ Выбрали свою первую колоду</p>
+        <p style="margin-top:1.2cqw;color:var(--ink)"><b class="gold">Вызов недели:</b> носите одну карту с собой и отмечайте, как её энергия проявляется в событиях дня.</p>
+        <p style="margin-top:1cqw;font-style:italic;color:var(--sub)">«Символы ведут нас туда, куда не доведёт логика» — К. Г. Юнг</p>
+      </div>
+      <img class="card" src="../tarot/c_fool.jpg" style="width:18cqw">
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

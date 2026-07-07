@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Модуль 1 — титул</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .wrap{display:flex;height:100%;align-items:center;gap:46px}
+  .left{flex:1.1}
+  .left .mod{font-family:'Marck Script',cursive;color:var(--gold);font-size:34px;line-height:1}
+  .left h1{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--ink);font-size:64px;line-height:1;margin:4px 0 0}
+  .left .lead{color:var(--sub);font-style:italic;font-size:19px;margin-top:14px;max-width:430px;line-height:1.5}
+  .topics{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:9px 26px;max-width:560px}
+  .topics .t{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--body)}
+  .topics .t .d{width:7px;height:7px;flex:none;transform:rotate(45deg);border:1.5px solid var(--gold)}
+  .right{flex:.7;display:flex;align-items:center;justify-content:center}
+  .hero{width:268px;height:462px;border:5px solid var(--gold);border-radius:10px;overflow:hidden;
+    background:#fff;box-shadow:0 20px 44px rgba(31,51,80,.34);transform:rotate(4deg)}
+  .hero img{width:100%;height:100%;object-fit:cover;display:block}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div class="wrap">
+      <div class="left">
+        <div class="mod">модуль первый</div>
+        <h1>Знакомство с Таро</h1>
+        <div class="lead">С чего начинается уверенное чтение карт: язык колоды, её устройство и первый разговор с Арканами.</div>
+        <div class="topics">
+          <div class="t"><span class="d"></span>Миф и реальность</div>
+          <div class="t"><span class="d"></span>Эволюция Таро</div>
+          <div class="t"><span class="d"></span>Структура колоды</div>
+          <div class="t"><span class="d"></span>Масти и стихии</div>
+          <div class="t"><span class="d"></span>Карты Двора</div>
+          <div class="t"><span class="d"></span>Прямые и перевёрнутые</div>
+          <div class="t"><span class="d"></span>Как выбрать колоду</div>
+          <div class="t"><span class="d"></span>Дневник Таро</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="hero"><img src="../cards/major_fool.jpg" alt="Шут — начало пути"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

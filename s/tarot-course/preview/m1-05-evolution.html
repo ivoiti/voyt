@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Эволюция Таро</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .lead2{color:var(--sub);font-style:italic;font-size:18px;margin-top:6px}
+  .timeline{position:relative;margin-top:40px;padding-top:40px}
+  .axis{position:absolute;top:54px;left:4%;right:4%;height:2px;
+    background:linear-gradient(90deg,transparent,var(--gold) 12%,var(--gold) 88%,transparent)}
+  .nodes{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .node{position:relative;text-align:center;padding-top:46px}
+  .node .dot{position:absolute;top:0;left:50%;transform:translateX(-50%);width:30px;height:30px;color:var(--gold)}
+  .node .yr{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold);font-size:30px;line-height:1}
+  .node .card{margin-top:12px;background:rgba(255,255,255,.55);border:1px solid rgba(169,131,47,.4);
+    border-radius:14px;padding:18px 18px;min-height:178px;position:relative}
+  .node .card::before{content:"";position:absolute;top:8px;left:8px;width:12px;height:12px;border:1.5px solid var(--gold);border-right:none;border-bottom:none;opacity:.6}
+  .node .card h3{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:22px;font-weight:600;line-height:1.05}
+  .node .card p{font-size:15px;color:var(--body);line-height:1.45;margin-top:8px}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">модуль 1 · немного истории</div>
+      <h1 class="title">Эволюция Таро</h1>
+      <div class="lead2">Путь от салонной игры до инструмента самопознания</div>
+    </div>
+
+    <div class="timeline">
+      <div class="axis"></div>
+      <div class="nodes">
+        <div class="node">
+          <div class="dot"><svg viewBox="0 0 64 64" class="ico"><path d="M32 8 L35 29 L56 32 L35 35 L32 56 L29 35 L8 32 L29 29 Z"/></svg></div>
+          <div class="yr">XV век</div>
+          <div class="card"><h3>Италия</h3><p>Появляются первые карты «тарокки» — настольная игра знати эпохи Возрождения.</p></div>
+        </div>
+        <div class="node">
+          <div class="dot"><svg viewBox="0 0 64 64" class="ico"><path d="M32 8 L35 29 L56 32 L35 35 L32 56 L29 35 L8 32 L29 29 Z"/></svg></div>
+          <div class="yr">XVIII век</div>
+          <div class="card"><h3>Франция</h3><p>Таро связывают с символизмом и эзотерикой — карты становятся языком смыслов.</p></div>
+        </div>
+        <div class="node">
+          <div class="dot"><svg viewBox="0 0 64 64" class="ico"><path d="M32 8 L35 29 L56 32 L35 35 L32 56 L29 35 L8 32 L29 29 Z"/></svg></div>
+          <div class="yr">1909</div>
+          <div class="card"><h3>Райдер–Уэйт</h3><p>А. Уэйт и художница Памела Колман Смит создают колоду с понятными образами — мировой стандарт.</p></div>
+        </div>
+        <div class="node">
+          <div class="dot"><svg viewBox="0 0 64 64" class="ico"><path d="M32 8 L35 29 L56 32 L35 35 L32 56 L29 35 L8 32 L29 29 Z"/></svg></div>
+          <div class="yr">сегодня</div>
+          <div class="card"><h3>Весь мир</h3><p>Сотни колод и подходов. Таро — бережный инструмент самопознания и анализа.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

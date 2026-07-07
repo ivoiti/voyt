@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Масти и стихии</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:6px}
+  .suit{background:rgba(255,255,255,.55);border:1px solid rgba(169,131,47,.4);border-radius:16px;
+    padding:26px 20px;text-align:center;position:relative;display:flex;flex-direction:column;align-items:center;gap:12px}
+  .suit::before,.suit::after{content:"";position:absolute;width:13px;height:13px;border:1.5px solid var(--gold);opacity:.6}
+  .suit::before{top:8px;left:8px;border-right:none;border-bottom:none}
+  .suit::after{bottom:8px;right:8px;border-left:none;border-top:none}
+  .suit .big{width:78px;height:78px;border-radius:50%;border:1.5px solid var(--gold);background:rgba(255,255,255,.7);
+    display:flex;align-items:center;justify-content:center;color:var(--gold)}
+  .suit .big svg{width:46px;height:46px}
+  .suit h3{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:27px;font-weight:600;line-height:1}
+  .suit .el{display:inline-flex;align-items:center;gap:7px;color:#fff;font-size:14px;
+    padding:5px 14px;border-radius:30px;letter-spacing:.5px}
+  .suit .el svg{width:18px;height:18px}
+  .suit p{font-size:15.5px;color:var(--body);line-height:1.5}
+  .e-fire{background:#b9722e} .e-water{background:#2f6fa6} .e-air{background:#5b86a6} .e-earth{background:#7a7a3c}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">модуль 1 · младшие арканы</div>
+      <h1 class="title">Масти и стихии</h1>
+      <div class="lead">Четыре масти — четыре стихии и четыре стороны жизни</div>
+    </div>
+    <div class="rule"></div>
+
+    <div class="cols">
+      <div class="suit">
+        <div class="big"><svg viewBox="0 0 64 64"><path class="ico" d="M32 56 V16"/><path class="ico" d="M32 26 C26 26 22 22 22 15"/><path class="ico" d="M32 32 C38 32 42 28 42 21"/><path class="ico" d="M32 9 V15 M29 12 H35"/></svg></div>
+        <h3>Жезлы</h3>
+        <span class="el e-fire"><svg viewBox="0 0 64 64"><path class="ico" d="M32 8 C39 20 41 27 37 36 C41 34 42 29 42 29 C46 39 40 54 32 54 C24 54 18 46 23 36 C25 40 27 39 28 37 C24 29 27 19 32 8 Z" stroke="#fff"/></svg>Огонь</span>
+        <p>Энергия, действие, страсть, карьера и амбиции.</p>
+      </div>
+
+      <div class="suit">
+        <div class="big"><svg viewBox="0 0 64 64"><path class="ico" d="M16 16 H48 C47 31 40.5 39 32 39 C23.5 39 17 31 16 16 Z"/><path class="ico" d="M32 39 V49"/><path class="ico" d="M23 53 C23 49 41 49 41 53"/><path class="ico" d="M22 53 H42"/><circle class="ico" cx="32" cy="23" r="3"/></svg></div>
+        <h3>Кубки</h3>
+        <span class="el e-water"><svg viewBox="0 0 64 64"><path class="ico" d="M32 8 C32 8 18 27 18 38 A14 14 0 1 0 46 38 C46 27 32 8 32 8 Z" stroke="#fff"/></svg>Вода</span>
+        <p>Эмоции, любовь, отношения и творчество.</p>
+      </div>
+
+      <div class="suit">
+        <div class="big"><svg viewBox="0 0 64 64"><path class="ico" d="M28 16 L32 8 L36 16"/><path class="ico" d="M32 8 V46"/><path class="ico" d="M22 46 H42"/><path class="ico" d="M32 46 V56"/><circle class="ico" cx="32" cy="58" r="2"/></svg></div>
+        <h3>Мечи</h3>
+        <span class="el e-air"><svg viewBox="0 0 64 64"><path class="ico" d="M14 26 H38 A6 6 0 1 0 32 20" stroke="#fff"/><path class="ico" d="M14 34 H46 A6 6 0 1 1 40 40" stroke="#fff"/><path class="ico" d="M14 42 H30" stroke="#fff"/></svg>Воздух</span>
+        <p>Мысли, слова, решения и конфликты.</p>
+      </div>
+
+      <div class="suit">
+        <div class="big"><svg viewBox="0 0 64 64"><circle class="ico" cx="32" cy="32" r="18"/><path class="ico" d="M32 20 L39.1 41.7 L20.6 28.3 L43.4 28.3 L24.9 41.7 Z"/></svg></div>
+        <h3>Пентакли</h3>
+        <span class="el e-earth"><svg viewBox="0 0 64 64"><path class="ico" d="M16 48 C16 28 34 14 48 14 C48 34 34 48 16 48 Z" stroke="#fff"/><path class="ico" d="M22 44 C30 36 40 26 45 19" stroke="#fff"/></svg>Земля</span>
+        <p>Деньги, работа, тело и материальная опора.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

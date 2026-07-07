@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLEUR — цветочное ателье (макет)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#faf7f2;--ink:#2a2521;--soft:#8a8178;--acc:#9c6b4f;--line:#e7e0d5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  .serif{font-family:'Cormorant Garamond',Georgia,serif}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 44px}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:30px 0;border-bottom:1px solid var(--line)}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:6px;font-weight:500}
+  .menu{display:flex;gap:30px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--soft)}
+  .menu a{color:inherit;text-decoration:none}
+  .cart{font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase}
+  .cart b{color:var(--acc)}
+  .hero{padding:96px 0 72px;text-align:center}
+  .hero .ey{font-size:11.5px;letter-spacing:4px;text-transform:uppercase;color:var(--acc);margin-bottom:22px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(44px,7vw,76px);line-height:1.04;letter-spacing:.5px}
+  .hero h1 i{font-style:italic;color:var(--acc)}
+  .hero p{max-width:36ch;margin:24px auto 32px;color:var(--soft);font-weight:300;font-size:16px}
+  .btn{display:inline-block;font-size:12px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--ink);border-radius:30px;padding:14px 38px;color:var(--ink);text-decoration:none;transition:.2s;cursor:pointer}
+  .btn:hover{background:var(--ink);color:var(--bg)}
+  .cats{display:flex;justify-content:center;flex-wrap:wrap;gap:32px;padding:24px 0 6px;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--soft)}
+  .cats span.on{color:var(--ink);border-bottom:1px solid var(--acc);padding-bottom:4px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;padding:46px 0 16px}
+  .card .ph{aspect-ratio:4/5;border-radius:6px;overflow:hidden;background:#efe6da}
+  .card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .card:hover .ph img{transform:scale(1.04)}
+  .card .meta{display:flex;justify-content:space-between;align-items:baseline;margin-top:15px}
+  .card .nm{font-family:'Cormorant Garamond',serif;font-size:21px}
+  .card .pr{font-size:13px;color:var(--soft)}
+  .card .add{margin-top:8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--acc)}
+  .sub{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:50px;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .sub .pic{min-height:340px;background-size:cover;background-position:center}
+  .sub .txt{padding:54px 50px;display:flex;flex-direction:column;justify-content:center}
+  .sub .ey{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--acc);margin-bottom:14px}
+  .sub h2{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:38px;line-height:1.1;margin-bottom:14px}
+  .sub p{color:var(--soft);font-weight:300;font-size:15px;margin-bottom:24px;max-width:34ch}
+  .sub .price{font-family:'Cormorant Garamond',serif;font-size:22px;margin-bottom:22px}
+  .promo{margin-top:50px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0;display:flex;justify-content:space-around;text-align:center;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--soft);flex-wrap:wrap;gap:18px}
+  .promo b{display:block;font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:0;text-transform:none;color:var(--ink);margin-bottom:6px;font-weight:500}
+  .foot{padding:34px 0 56px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--soft);flex-wrap:wrap;gap:12px}
+  .tagm{position:fixed;left:14px;bottom:14px;background:var(--ink);color:var(--bg);font-size:11px;letter-spacing:1px;padding:7px 13px;border-radius:20px;opacity:.85}
+  @media(max-width:760px){.wrap{padding:0 20px}.menu{display:none}.grid{grid-template-columns:1fr 1fr;gap:18px}.sub{grid-template-columns:1fr}.sub .pic{min-height:230px}.sub .txt{padding:34px 24px}}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav">
+      <div class="menu"><a href="#">Каталог</a><a href="#">Подписка</a><a href="#">О ателье</a></div>
+      <div class="logo">F L E U R</div>
+      <div class="cart">Корзина <b>(2)</b></div>
+    </div>
+    <div class="hero">
+      <div class="ey">Цветочное ателье · Москва</div>
+      <h1>Цветы как <i>тихий</i><br>жест внимания</h1>
+      <p>Авторские букеты из сезонных цветов. Собираем вручную и привозим в день заказа.</p>
+      <a class="btn" href="#cat">В каталог</a>
+    </div>
+    <div class="cats" id="cat"><span class="on">Все</span><span>Розы</span><span>Сухоцветы</span><span>Свадьбы</span><span>Подписка</span></div>
+    <div class="grid">
+      <div class="card"><div class="ph"><img src="f1.jpg" alt="Букет Пыльная роза — дымчато-розовые розы"></div><div class="meta"><span class="nm">Пыльная роза</span><span class="pr">3 200 ₽</span></div><div class="add">В корзину →</div></div>
+      <div class="card"><div class="ph"><img src="f2.jpg" alt="Букет Терракота — розы в терракотовой гамме"></div><div class="meta"><span class="nm">Терракота</span><span class="pr">2 800 ₽</span></div><div class="add">В корзину →</div></div>
+      <div class="card"><div class="ph"><img src="f3.jpg" alt="Букет Сухоцветы — пальма, протея, пампасная трава"></div><div class="meta"><span class="nm">Сухоцветы</span><span class="pr">3 600 ₽</span></div><div class="add">В корзину →</div></div>
+    </div>
+    <div class="sub">
+      <div class="pic" style="background-image:url('f2.jpg')"></div>
+      <div class="txt">
+        <div class="ey">Подписка</div>
+        <h2>Свежие цветы<br>каждую неделю</h2>
+        <p>Букет к вашему столу или в офис — собираем по сезону и привозим в один и тот же день.</p>
+        <div class="price">от 8 900 ₽ / месяц</div>
+        <a class="btn" href="#">Оформить подписку</a>
+      </div>
+    </div>
+    <div class="promo">
+      <div><b>2 часа</b>доставка по городу</div>
+      <div><b>Вручную</b>каждый букет — авторский</div>
+      <div><b>Сезон</b>только свежие цветы</div>
+    </div>
+    <div class="foot"><div class="logo" style="font-size:19px">F L E U R</div><div>© 2026 · Цветочное ателье · Москва</div></div>
+  </div>
+  <div class="tagm">Макет · тип: интернет-магазин · дизайн Янита Войт</div>
+</body>
+</html>

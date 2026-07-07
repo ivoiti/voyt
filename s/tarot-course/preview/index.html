@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Таро: уверенный расклад — курс</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Marck+Script&family=PT+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#a9832f;--ink:#1f3350;--body:#3c4d68;--sub:#365a86}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'PT Serif',serif;color:var(--body);
+    background:radial-gradient(120% 80% at 50% 0%, #f3f8fd 0%, #e4f0fa 45%, #d3e5f5 100%);
+    min-height:100vh}
+  .hero{text-align:center;padding:60px 20px 26px}
+  .hero .kicker{font-family:'Marck Script',cursive;color:var(--gold);font-size:30px}
+  .hero h1{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--ink);
+    font-size:62px;line-height:1;letter-spacing:1px;margin:6px 0 0}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero .sub{color:var(--sub);font-style:italic;font-size:19px;margin-top:14px}
+  .hero .author{margin-top:14px;font-family:'Marck Script',cursive;color:var(--gold);font-size:24px}
+  .star{display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);margin:22px auto 0;max-width:380px}
+  .star::before,.star::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+  .star::after{background:linear-gradient(90deg,var(--gold),transparent)}
+  .star svg{width:22px;height:22px}
+
+  nav{position:sticky;top:0;z-index:20;background:rgba(238,245,252,.92);backdrop-filter:blur(6px);
+    border-top:1px solid rgba(169,131,47,.35);border-bottom:1px solid rgba(169,131,47,.35);
+    display:flex;justify-content:center;gap:38px;padding:14px 10px;flex-wrap:wrap}
+  nav a{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--ink);text-decoration:none;
+    font-weight:600;padding-bottom:3px;border-bottom:2px solid transparent;transition:border-color .15s}
+  nav a:hover{border-color:var(--gold)}
+
+  section{max-width:1140px;margin:0 auto;padding:42px 20px 8px}
+  .sec-h{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:34px;font-weight:600;
+    display:flex;align-items:center;gap:14px;margin-bottom:6px}
+  .sec-h .badge{font-family:'Marck Script',cursive;color:var(--gold);font-size:22px;font-weight:400}
+  .sec-h::after{content:"";flex:1;height:1px;background:rgba(169,131,47,.4)}
+  .sec-note{color:var(--sub);font-style:italic;font-size:16px;margin-bottom:18px}
+
+  .stage{width:100%;max-width:1100px;margin:22px auto;overflow:hidden;border-radius:10px;
+    box-shadow:0 18px 44px rgba(31,51,80,.22)}
+  .stage iframe{width:1200px;height:800px;border:0;transform-origin:top left;display:block}
+
+  .soon{background:rgba(255,255,255,.5);border:1px dashed rgba(169,131,47,.6);border-radius:14px;
+    max-width:1100px;margin:18px auto;padding:26px;text-align:center;color:var(--sub);font-style:italic;font-size:17px}
+  footer.pg{text-align:center;color:var(--sub);font-style:italic;font-size:14px;padding:40px 20px 60px}
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="kicker">авторский курс по Таро</div>
+    <h1>Таро: <em>уверенный расклад</em></h1>
+    <div class="sub">От первой карты — к точному, осознанному раскладу</div>
+    <div class="author">с Жаннетой</div>
+    <div class="star"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M32 8 L35 29 L56 32 L35 35 L32 56 L29 35 L8 32 L29 29 Z"/></svg></div>
+  </div>
+
+  <nav>
+    <a href="#about">О курсе</a>
+    <a href="#module1">Модуль 1</a>
+    <a href="#handouts">Раздатки</a>
+  </nav>
+
+  <section id="cover">
+    <div class="stage"><iframe src="00-cover.html" loading="lazy" scrolling="no"></iframe></div>
+  </section>
+
+  <section id="about">
+    <div class="sec-h"><span class="badge">раздел 1</span>О курсе</div>
+    <div class="sec-note">Кто автор, что входит в обучение, как оно устроено и к чему вы придёте.</div>
+    <div class="stage"><iframe src="a01-about-jeanette.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="01-about-course.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="02-structure.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="a02-results.html" loading="lazy" scrolling="no"></iframe></div>
+  </section>
+
+  <section id="module1">
+    <div class="sec-h"><span class="badge">раздел 2</span>Модуль 1 · Знакомство с Таро</div>
+    <div class="sec-note">Полный модуль — 11 слайдов: от мифов и истории до дневника и итогов.</div>
+    <div class="stage"><iframe src="m1-01-title.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-04-myth.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-05-evolution.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-02-deck.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-03-suits.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-06-riddle.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-07-court.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-08-reversed.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-09-choose.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-10-journal.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="m1-11-summary.html" loading="lazy" scrolling="no"></iframe></div>
+  </section>
+
+  <section id="handouts">
+    <div class="sec-h"><span class="badge">раздел 3</span>Раздатки</div>
+    <div class="sec-note">Шпаргалки по всем мастям и чек-лист — для скачивания и печати.</div>
+    <div class="stage"><iframe src="sheet-cups.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="sheet-wands.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="sheet-swords.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="sheet-pents.html" loading="lazy" scrolling="no"></iframe></div>
+    <div class="stage"><iframe src="sheet-checklist.html" loading="lazy" scrolling="no"></iframe></div>
+  </section>
+
+  <footer class="pg">Таро: уверенный расклад · авторский курс Жаннеты · черновик на согласование</footer>
+
+  <script>
+    function fit(){
+      document.querySelectorAll('.stage').forEach(function(st){
+        var s = st.clientWidth/1200;
+        var fr = st.querySelector('iframe');
+        fr.style.transform = 'scale('+s+')';
+        st.style.height = (800*s)+'px';
+      });
+    }
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    document.addEventListener('DOMContentLoaded', fit);
+    fit();
+  </script>
+</body>
+</html>

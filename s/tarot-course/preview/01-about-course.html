@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>О курсе</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:6px}
+  .card{
+    background:rgba(255,255,255,.55);border:1px solid rgba(169,131,47,.4);border-radius:14px;
+    padding:26px 24px;position:relative;display:flex;flex-direction:column;gap:12px;min-height:188px;
+  }
+  .card::before,.card::after{content:"";position:absolute;width:13px;height:13px;border:1.5px solid var(--gold);opacity:.65}
+  .card::before{top:8px;left:8px;border-right:none;border-bottom:none}
+  .card::after{bottom:8px;right:8px;border-left:none;border-top:none}
+  .badge{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.7);
+    border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+  .badge svg{width:36px;height:36px}
+  .card h3{font-family:'Cormorant Garamond',serif;color:var(--ink);font-size:25px;font-weight:600;line-height:1.05}
+  .card p{font-size:16px;color:var(--body);line-height:1.5}
+  .card .accent{color:var(--water);font-style:italic}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">авторский курс по Таро</div>
+      <h1 class="title">О курсе</h1>
+      <div class="lead">Всё, что входит в обучение — теория, практика и поддержка на каждом шаге</div>
+    </div>
+    <div class="rule"></div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="badge"><svg viewBox="0 0 64 64"><rect class="ico" x="9" y="16" width="46" height="33" rx="4"/><path class="ico" d="M27 26 L40 32 L27 38 Z"/></svg></div>
+        <h3>Видеоуроки</h3>
+        <p>Короткие занятия <span class="accent">по 5–15 минут</span> — по одной теме за раз.</p>
+      </div>
+      <div class="card">
+        <div class="badge"><svg viewBox="0 0 64 64"><path class="ico" d="M18 8 H38 L46 16 V56 H18 Z"/><path class="ico" d="M38 8 V16 H46"/><path class="ico" d="M24 30 H40 M24 38 H40 M24 46 H34"/></svg></div>
+        <h3>PDF-материалы</h3>
+        <p>Шпаргалки и чек-листы, которые всегда под рукой.</p>
+      </div>
+      <div class="card">
+        <div class="badge"><svg viewBox="0 0 64 64"><path class="ico" d="M12 16 H52 V44 H30 L20 54 V44 H12 Z"/><path class="ico" d="M22 28 H42 M22 36 H36"/></svg></div>
+        <h3>Закрытый чат</h3>
+        <p>Группа для общения, вопросов и обратной связи.</p>
+      </div>
+      <div class="card">
+        <div class="badge"><svg viewBox="0 0 64 64"><rect class="ico" x="23" y="17" width="18" height="28" rx="2" transform="rotate(-14 32 31)"/><rect class="ico" x="23" y="17" width="18" height="28" rx="2" transform="rotate(14 32 31)"/><rect class="ico" x="23" y="17" width="18" height="28" rx="2"/></svg></div>
+        <h3>Чтение сочетаний</h3>
+        <p>Техника, как карты «говорят» вместе, а не по одной.</p>
+      </div>
+      <div class="card">
+        <div class="badge"><svg viewBox="0 0 64 64"><rect class="ico" x="16" y="12" width="32" height="44" rx="3"/><rect class="ico" x="24" y="8" width="16" height="8" rx="2"/><path class="ico" d="M23 34 l5 5 11 -13"/></svg></div>
+        <h3>Итоговый мини-тест</h3>
+        <p>Лёгкая проверка — закрепить пройденное.</p>
+      </div>
+      <div class="card">
+        <div class="badge"><svg viewBox="0 0 64 64"><path class="ico" d="M10 32 C20 21 44 21 54 32 C44 43 20 43 10 32 Z"/><circle class="ico" cx="32" cy="32" r="6"/><circle cx="32" cy="32" r="1.5" fill="currentColor"/></svg></div>
+        <h3>Практикум</h3>
+        <p>Анализ <span class="accent">публичных личностей</span> через Таро.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="brand">
+    <span>Авторский курс по Таро</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>

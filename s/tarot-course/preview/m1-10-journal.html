@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Дневник Таро</title>
+<link rel="stylesheet" href="slide.css">
+<style>
+  .lead2{color:var(--sub);font-style:italic;font-size:18px;margin-top:6px}
+  table{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;
+    background:rgba(255,255,255,.55);border:1px solid rgba(169,131,47,.45);border-radius:14px;overflow:hidden}
+  thead th{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:#fff;
+    background:var(--gold);padding:15px 18px;text-align:left}
+  tbody td{padding:15px 18px;font-size:16px;color:var(--body);border-top:1px solid rgba(169,131,47,.25);vertical-align:top}
+  tbody tr:nth-child(even){background:rgba(255,255,255,.4)}
+  tbody td.date{font-family:'Cormorant Garamond',serif;color:var(--ink);font-weight:600;white-space:nowrap}
+  tbody td.card{color:var(--gold);font-weight:700}
+  tbody tr.empty td{height:46px;color:rgba(60,77,104,.4);font-style:italic}
+  .note{margin-top:20px;font-style:italic;color:var(--sub);font-size:17px;line-height:1.45;text-align:center}
+  .note b{color:var(--ink);font-style:normal}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="orb a"></div><div class="orb b"></div><div class="orb c"></div>
+  <div class="frame"></div>
+  <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+
+  <div class="inner">
+    <div>
+      <div class="kicker">модуль 1 · ваша практика</div>
+      <h1 class="title">Дневник Таро</h1>
+      <div class="lead2">Тяните по карте в день и записывайте — так растёт чутьё</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr><th style="width:120px">Дата</th><th style="width:170px">Карта дня</th><th>Мой вопрос</th><th>Что я увидела</th><th style="width:210px">Как откликнулось</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="date">12 мая</td>
+          <td class="card">Туз Кубков</td>
+          <td>Каким будет день?</td>
+          <td>Тепло, новое чувство, открытость</td>
+          <td>Приятная встреча, лёгкость</td>
+        </tr>
+        <tr>
+          <td class="date">13 мая</td>
+          <td class="card">Двойка Мечей</td>
+          <td>На чём сосредоточиться?</td>
+          <td>Выбор, пауза, нужно решить</td>
+          <td>Отложила спор, всё улеглось</td>
+        </tr>
+        <tr class="empty"><td>· · ·</td><td>· · ·</td><td>· · ·</td><td>· · ·</td><td>· · ·</td></tr>
+        <tr class="empty"><td>· · ·</td><td>· · ·</td><td>· · ·</td><td>· · ·</td><td>· · ·</td></tr>
+      </tbody>
+    </table>
+
+    <p class="note">Сначала пишите <b>первые ассоциации</b>, и только потом сверяйтесь со значением. Через месяц вы увидите, как точно «звучат» карты.</p>
+  </div>
+
+  <footer class="brand">
+    <span>Таро: уверенный расклад</span>
+    <span class="au">Жаннета</span>
+  </footer>
+</div>
+</body>
+</html>
