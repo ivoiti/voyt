@@ -16,25 +16,29 @@
   --measure:62ch;
   --gap:clamp(1.6rem,3.4vw,3rem);
 }
-/* Цвета взяты из её собственных материалов: синий — фон «Портфолио синего»
-   (#1f377f), терракота и зелень — из самих холстов. На цветных фонах работы
-   получают паспарту (--mat): так в галерее вешают на цветную стену, чтобы
-   картина не спорила со стеной. */
-:root[data-theme="siniy"]{   /* Синий — из портфолио */
-  --paper:#1f377f; --ink:#f4f5fa; --ink-2:#c5cbe4; --muted:#8f9ac4; --line:#3b508f;
+/* Яркие палитры (правка Яниты 31.07.2026: «нужно ещё ярче»).
+   Каждая проверена на контраст текста — не ниже 4.5:1, иначе сайт красивый,
+   но нечитаемый. На цветных фонах работы лежат на светлом поле (--mat):
+   так в галерее вешают на цветную стену, чтобы холст не спорил со стеной. */
+:root[data-theme="ultramarin"]{  /* Ультрамарин — белый текст, контраст 6.0 */
+  --paper:#3347ff; --ink:#ffffff; --ink-2:#dfe3ff; --muted:#a9b3ff; --line:#5c6bff;
   --mat:#f7f6f2;
 }
-:root[data-theme="terrakota"]{ /* Терракота — из «Побега» */
-  --paper:#8f3323; --ink:#fbf3ef; --ink-2:#f0d5cb; --muted:#d09c8c; --line:#a4553f;
-  --mat:#f9f5f0;
+:root[data-theme="kinovar"]{     /* Киноварь — тёмный текст, контраст 5.3 */
+  --paper:#f05a2a; --ink:#2b0d03; --ink-2:#5a2410; --muted:#8f4526; --line:#d24c22;
+  --mat:#fdf8f4;
 }
-:root[data-theme="zelen"]{   /* Зелень — из «Побега» */
-  --paper:#24421f; --ink:#f2f6ef; --ink-2:#cfdcc8; --muted:#94a88c; --line:#3d5a37;
-  --mat:#f7f8f3;
+:root[data-theme="malahit"]{     /* Малахит — тёмный текст, контраст 5.4 */
+  --paper:#1fa85c; --ink:#04240f; --ink-2:#124a26; --muted:#2b7343; --line:#1a9150;
+  --mat:#f7fbf6;
 }
-:root[data-theme="zoloto"]{  /* Золото — светлый яркий, текст тёмный */
-  --paper:#e8b93f; --ink:#20170a; --ink-2:#4c3a19; --muted:#8a6f31; --line:#cfa430;
-  --mat:#fbf8f1;
+:root[data-theme="fuksiya"]{     /* Фуксия — тёмный текст, контраст 5.1 */
+  --paper:#e8479b; --ink:#2a0616; --ink-2:#5b1436; --muted:#8e2a58; --line:#cf3d89;
+  --mat:#fdf6fa;
+}
+:root[data-theme="zoloto"]{      /* Жёлтый — тёмный текст, контраст 11.6 */
+  --paper:#ffc629; --ink:#1a1408; --ink-2:#4c3a19; --muted:#8a6f31; --line:#e3ac1c;
+  --mat:#fffdf6;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -190,3 +194,17 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height
 :root[data-theme] .work figcaption{padding-left:.1rem;padding-right:.1rem}
 /* полноэкранные кадры экспозиции оставляем без поля — они и есть среда */
 .phero,.band{background:transparent}
+
+/* подменю в шапке: у «Проектов» — серии, у «Медиа» — три раздела */
+.navlist{list-style:none;display:flex;gap:1.6rem;flex-wrap:wrap;margin:0;padding:0}
+.navlist>li{position:relative}
+.sub{list-style:none;margin:0;padding:.5rem 0;position:absolute;left:-.8rem;top:100%;min-width:13rem;
+  background:var(--paper);border:1px solid var(--line);opacity:0;visibility:hidden;transition:opacity .13s ease;z-index:50}
+.has-sub:hover .sub,.has-sub:focus-within .sub{opacity:1;visibility:visible}
+.sub a{display:block;padding:.42rem .9rem;font-size:.82rem;text-transform:none;letter-spacing:0;color:var(--ink-2);border:0}
+.sub a:hover{color:var(--ink);background:var(--mat,rgba(0,0,0,.04))}
+@media (max-width:820px){
+  .navlist{flex-direction:column;gap:0;width:100%}
+  .sub{position:static;opacity:1;visibility:visible;border:0;padding:0 0 .4rem 1rem;min-width:0}
+  .sub a{padding:.4rem 0}
+}
