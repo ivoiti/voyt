@@ -208,3 +208,8 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height
   .sub{position:static;opacity:1;visibility:visible;border:0;padding:0 0 .4rem 1rem;min-width:0}
   .sub a{padding:.4rem 0}
 }
+
+/* виды экспозиции на странице проекта */
+.pgal{padding-top:clamp(1.5rem,3vw,2.5rem)}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:var(--gap);margin-top:1.2rem}
+.gitem figcaption{padding-top:.6rem;text-transform:none;letter-spacing:0}
