@@ -161,3 +161,11 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height
   .contact{grid-template-columns:1fr;gap:.2rem}
   .contact dd{margin-bottom:.9rem}
 }
+
+/* переключатель цвета фона — приглушённые тона, чтобы не спорить с живописью */
+.tint{display:flex;gap:.42rem;align-items:center;margin-left:1.1rem}
+.tint button{width:15px;height:15px;border-radius:50%;border:1px solid var(--line);background:var(--c);
+  cursor:pointer;padding:0;transition:transform .12s ease}
+.tint button:hover{transform:scale(1.18)}
+.tint button[aria-pressed="true"]{box-shadow:0 0 0 1.5px var(--paper),0 0 0 3px var(--ink)}
+@media (max-width:820px){.tint{margin-left:auto;order:2}}

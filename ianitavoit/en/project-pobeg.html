@@ -16,6 +16,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="/voyt/ianitavoit/css/site.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -25,6 +26,12 @@
     <input type="checkbox" id="m" class="mchk" hidden>
     <label for="m" class="burger" aria-label="Menu"><span></span><span></span></label>
     <nav class="nav"><a href="/voyt/ianitavoit/en/projects.html" class="is-current">Projects</a><a href="/voyt/ianitavoit/en/works.html">Works</a><a href="/voyt/ianitavoit/en/exhibitions.html">Exhibitions</a><a href="/voyt/ianitavoit/en/press.html">Press</a><a href="/voyt/ianitavoit/en/about.html">About</a><a href="/voyt/ianitavoit/en/contact.html">Contact</a></nav>
+    <div class="tint" role="group" aria-label="Background colour">
+      <button type="button" data-t="" style="--c:#faf9f7" title="Бумага"></button>
+      <button type="button" data-t="glina" style="--c:#f1ebe1" title="Глина"></button>
+      <button type="button" data-t="shalfey" style="--c:#eaeee9" title="Шалфей"></button>
+      <button type="button" data-t="noch" style="--c:#131311" title="Ночь"></button>
+    </div>
     <a class="lang" href="https://ivoiti.github.io/voyt/ianitavoit/proekt-pobeg.html" hreflang="ru">RU</a>
   </div>
 </header>
@@ -70,6 +77,19 @@
     </p>
   </div>
 </footer>
+<script>
+(function(){
+  var r=document.documentElement;
+  function paint(){var c=r.dataset.theme||'';
+    document.querySelectorAll('.tint button').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.dataset.t===c));});}
+  document.querySelectorAll('.tint button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var v=b.dataset.t; if(v){r.dataset.theme=v}else{delete r.dataset.theme}
+      try{localStorage.setItem('theme',v)}catch(e){} paint();});});
+  paint();
+})();
+</script>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Person",
