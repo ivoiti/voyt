@@ -16,14 +16,25 @@
   --measure:62ch;
   --gap:clamp(1.6rem,3.4vw,3rem);
 }
-:root[data-theme="glina"]{   /* Глина — тёплый песочный */
-  --paper:#f1ebe1; --ink:#1b1610; --ink-2:#4f463a; --muted:#9b8f7d; --line:#ddd3c3;
+/* Цвета взяты из её собственных материалов: синий — фон «Портфолио синего»
+   (#1f377f), терракота и зелень — из самих холстов. На цветных фонах работы
+   получают паспарту (--mat): так в галерее вешают на цветную стену, чтобы
+   картина не спорила со стеной. */
+:root[data-theme="siniy"]{   /* Синий — из портфолио */
+  --paper:#1f377f; --ink:#f4f5fa; --ink-2:#c5cbe4; --muted:#8f9ac4; --line:#3b508f;
+  --mat:#f7f6f2;
 }
-:root[data-theme="shalfey"]{ /* Шалфей — холодный серо-зелёный */
-  --paper:#eaeee9; --ink:#141813; --ink-2:#454d43; --muted:#8b968a; --line:#d5ddd3;
+:root[data-theme="terrakota"]{ /* Терракота — из «Побега» */
+  --paper:#8f3323; --ink:#fbf3ef; --ink-2:#f0d5cb; --muted:#d09c8c; --line:#a4553f;
+  --mat:#f9f5f0;
 }
-:root[data-theme="noch"]{    /* Ночь — под виды экспозиции */
-  --paper:#131311; --ink:#f2f0ec; --ink-2:#c2beb6; --muted:#8b8781; --line:#2c2b28;
+:root[data-theme="zelen"]{   /* Зелень — из «Побега» */
+  --paper:#24421f; --ink:#f2f6ef; --ink-2:#cfdcc8; --muted:#94a88c; --line:#3d5a37;
+  --mat:#f7f8f3;
+}
+:root[data-theme="zoloto"]{  /* Золото — светлый яркий, текст тёмный */
+  --paper:#e8b93f; --ink:#20170a; --ink-2:#4c3a19; --muted:#8a6f31; --line:#cfa430;
+  --mat:#fbf8f1;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
@@ -169,3 +180,13 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height
 .tint button:hover{transform:scale(1.18)}
 .tint button[aria-pressed="true"]{box-shadow:0 0 0 1.5px var(--paper),0 0 0 3px var(--ink)}
 @media (max-width:820px){.tint{margin-left:auto;order:2}}
+
+/* Паспарту: на цветных фонах работа лежит на светлом поле, как на стене
+   галереи. На «Бумаге» --mat не задан, поэтому поле не появляется. */
+.work figure, .work, .pitem__pic{background:var(--mat,transparent)}
+.work{padding:var(--mat-pad,0)}
+.pitem__pic{padding:var(--mat-pad,0)}
+:root[data-theme] .work,:root[data-theme] .pitem__pic{--mat-pad:.7rem}
+:root[data-theme] .work figcaption{padding-left:.1rem;padding-right:.1rem}
+/* полноэкранные кадры экспозиции оставляем без поля — они и есть среда */
+.phero,.band{background:transparent}
