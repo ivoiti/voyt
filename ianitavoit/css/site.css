@@ -214,34 +214,36 @@ h1.brand,.brand{font-family:Georgia,serif;font-size:1.3rem;font-weight:400;line-
 .mchk:checked ~ .top__in .burger span:nth-child(2){opacity:0}
 .mchk:checked ~ .top__in .burger span:nth-child(3){transform:translateY(-6.2px) rotate(-45deg)}
 
-/* выпадающая панель меню */
+/* панель меню — вертикальная, выезжает справа.
+   Правка Яниты 01.08.2026: часть работы должна оставаться на виду. */
 .nav{
-  position:absolute;left:0;right:0;top:100%;background:var(--paper);
-  border-bottom:1px solid var(--line);
-  max-height:0;overflow:hidden;transition:max-height .22s ease;z-index:45;
+  position:fixed;top:0;right:0;bottom:0;width:min(360px,82vw);
+  background:var(--paper);border-left:1px solid var(--line);
+  transform:translateX(101%);transition:transform .26s cubic-bezier(.4,0,.2,1);
+  z-index:45;overflow-y:auto;box-shadow:-8px 0 26px rgba(0,0,0,.12);
 }
-.mchk:checked ~ .nav{max-height:80vh;overflow:auto}
+.mchk:checked ~ .nav{transform:translateX(0)}
 .navlist{
-  list-style:none;margin:0;padding:clamp(1.4rem,3vw,2.4rem) max(1.5rem,calc((100% - 1320px)/2));
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.6rem 2.4rem;align-items:start;
+  list-style:none;margin:0;padding:5.2rem 2rem 2.5rem;
+  display:flex;flex-direction:column;gap:1.15rem;
 }
 .navlist>li>a{
-  font-family:Georgia,serif;font-size:1.18rem;letter-spacing:-.01em;color:var(--ink);
-  display:inline-block;padding-bottom:.15rem;border-bottom:1px solid transparent;
+  font-family:Georgia,serif;font-size:1.32rem;letter-spacing:-.01em;color:var(--ink);
+  display:inline-block;padding-bottom:.12rem;border-bottom:1px solid transparent;
 }
 .navlist>li>a:hover,.navlist>li>a.is-current{border-bottom-color:var(--ink)}
-.sub{list-style:none;margin:.7rem 0 0;padding:0}
-.sub a{display:block;padding:.24rem 0;font-size:.88rem;color:var(--ink-2)}
+.sub{list-style:none;margin:.5rem 0 0;padding:0}
+.sub a{display:block;padding:.22rem 0;font-size:.9rem;color:var(--ink-2)}
 .sub a:hover{color:var(--ink)}
 
 /* затемнение под открытым меню — клик по нему закрывает */
-.scrim{position:fixed;inset:68px 0 0;background:rgba(0,0,0,.18);opacity:0;visibility:hidden;transition:opacity .2s ease;z-index:30}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.18);opacity:0;visibility:hidden;transition:opacity .2s ease;z-index:30}
 .mchk:checked ~ .scrim{opacity:1;visibility:visible}
 
 @media (max-width:640px){
   .top__in{gap:.9rem}
   .brand{font-size:1.1rem}
   .tint button{width:21px;height:16px}
-  .navlist{grid-template-columns:1fr 1fr;gap:1.2rem 1.4rem}
-  .navlist>li>a{font-size:1.05rem}
+  .navlist{padding:4.6rem 1.5rem 2rem;gap:1rem}
+  .navlist>li>a{font-size:1.15rem}
 }
