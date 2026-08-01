@@ -177,15 +177,11 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height
 
 /* ── главная: один экран, без лишней прокрутки ──────
    Имя не дублируем — оно в шапке. Заголовок страницы — сама фраза. */
-.home{padding:clamp(2rem,4.5vh,3.4rem) 0 clamp(1.2rem,2.5vh,2rem)}
-.home__say{font-size:clamp(1.35rem,2.5vw,2.15rem);line-height:1.3;max-width:34ch;letter-spacing:-.01em}
-.home .more{margin-top:clamp(1rem,2vh,1.6rem)}
-.band--home img{height:clamp(260px,52vh,520px)}
-.band--home .ph{height:clamp(260px,52vh,520px)}
+.band--home{border-top:0}
+.band--home img,.band--home .ph{height:calc(100vh - 68px - 2.6rem)}
 .bandcap{padding:.6rem 0 1.4rem}
 @media (max-width:820px){
-  .home__say{font-size:1.2rem;max-width:none}
-  .band--home img,.band--home .ph{height:44vh}
+  .band--home img,.band--home .ph{height:calc(100vh - 62px - 2.6rem)}
 }
 
 /* ── шапка: всё меню в бургере ──────────────────────
@@ -195,19 +191,21 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height
    поэтому поиск их видит независимо от того, открыто оно или нет. */
 .top{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:40}
 .top__in{display:flex;align-items:center;gap:1.4rem;min-height:68px}
-.brand{font-family:Georgia,serif;font-size:1.3rem;letter-spacing:-.01em;white-space:nowrap;margin-right:auto}
+h1.brand,.brand{font-family:Georgia,serif;font-size:1.3rem;font-weight:400;line-height:1.2;letter-spacing:-.01em;white-space:nowrap;margin-right:auto}
 .lang{font-size:.78rem;letter-spacing:.12em;color:var(--muted);border:1px solid var(--line);padding:.28rem .6rem}
 .lang:hover{color:var(--ink);border-color:var(--ink)}
 
-/* холстики цвета — маленькие подрамники, а не кружки */
-.tint{display:flex;gap:.34rem;align-items:center}
+/* холстики цвета — маленькие холсты в рамах, а не кружки.
+   Рама берёт цвет текста, паспарту — цвет фона: работает на любой палитре. */
+.tint{display:flex;gap:.42rem;align-items:center}
 .tint button{
-  width:26px;height:19px;padding:0;cursor:pointer;background:var(--c);
-  border:1px solid rgba(0,0,0,.22);box-shadow:0 1px 2px rgba(0,0,0,.14);
-  transition:transform .12s ease, box-shadow .12s ease;
+  width:30px;height:23px;padding:0;cursor:pointer;background:var(--c);
+  border:2px solid var(--ink);
+  box-shadow:inset 0 0 0 1.5px var(--paper), 0 1px 3px rgba(0,0,0,.22);
+  transition:transform .13s ease, box-shadow .13s ease;
 }
-.tint button:hover{transform:translateY(-2px) rotate(-1.5deg);box-shadow:0 3px 6px rgba(0,0,0,.2)}
-.tint button[aria-pressed="true"]{outline:1.5px solid var(--ink);outline-offset:2px}
+.tint button:hover{transform:translateY(-2px) rotate(-2deg);box-shadow:inset 0 0 0 1.5px var(--paper),0 4px 8px rgba(0,0,0,.26)}
+.tint button[aria-pressed="true"]{transform:translateY(-1px);box-shadow:inset 0 0 0 1.5px var(--paper),0 0 0 2px var(--ink),0 2px 5px rgba(0,0,0,.24)}
 
 /* бургер */
 .burger{width:24px;height:14px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;flex:none}
